@@ -1,5 +1,6 @@
 
 <EditForm Model="@_newSession">
+    <h2>Add Session</h2>
     <InputText
         id="session-name"
         class="form-control"
@@ -12,4 +13,15 @@
         class="form-control"
         @bind-Value="_newSession.StartDate">
     </InputDate>
+    <label for="date-start"> End Date: </label>
+    <InputDate
+        id="date-start"
+        class="form-control"
+        @bind-Value="_newSession.EndDate">
+    </InputDate>
+        <button
+            class="btn btn-sm btn-primary"
+            type="submit">
+            Order
+        </button>
 </EditForm>

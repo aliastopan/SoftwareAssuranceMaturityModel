@@ -4,6 +4,7 @@ using SoftwareAssuranceMaturityModel.Application.Common.Models.User;
 using SoftwareAssuranceMaturityModel.Application.Common.Sercurity;
 using SoftwareAssuranceMaturityModel.Application.Common.Validators;
 using SoftwareAssuranceMaturityModel.Application.Common.Managers;
+using SoftwareAssuranceMaturityModel.Application.Actions.Session;
 
 namespace SoftwareAssuranceMaturityModel.Application
 {
@@ -14,6 +15,7 @@ namespace SoftwareAssuranceMaturityModel.Application
             services.AddTransient<IValidator<UserRegistrationDto>, UserRegistrationDtoValidator>();
             services.AddScoped<Authentication>();
 
+            services.AddTransient<CreateSession>();
             services.AddSingleton<QuestionnaireManager>();
 
             return services;
