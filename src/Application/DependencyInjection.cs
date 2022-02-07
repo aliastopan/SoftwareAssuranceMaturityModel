@@ -15,8 +15,9 @@ namespace SoftwareAssuranceMaturityModel.Application
             services.AddTransient<IValidator<UserRegistrationDto>, UserRegistrationDtoValidator>();
             services.AddScoped<Authentication>();
 
-            services.AddTransient<CreateSession>();
             services.AddSingleton<QuestionnaireManager>();
+            services.AddTransient<CreateSession>();
+            services.AddTransient<SurveyManager>();
 
             return services;
         }
