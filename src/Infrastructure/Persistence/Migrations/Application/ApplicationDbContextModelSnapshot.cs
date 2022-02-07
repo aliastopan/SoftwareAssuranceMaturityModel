@@ -64,8 +64,8 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.A
                     b.Property<byte>("Flag")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateOnly>("StartDate")
                         .HasColumnType("TEXT");

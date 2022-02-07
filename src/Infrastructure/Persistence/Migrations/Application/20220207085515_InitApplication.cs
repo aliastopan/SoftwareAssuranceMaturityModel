@@ -15,7 +15,7 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.A
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<int>(type: "INTEGER", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
                     StartDate = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     EndDate = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     Flag = table.Column<byte>(type: "INTEGER", nullable: false)
