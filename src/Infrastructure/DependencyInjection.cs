@@ -11,13 +11,32 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        private static IServiceCollection AddUserDbContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<UserDbContext>(options => options
                 .UseSqlite(configuration.GetConnectionString("Identity"), migration => migration
                 .MigrationsAssembly(typeof(UserDbContext).Assembly.FullName)));
             services.AddScoped<IUserDbContext>(provider => provider
                 .GetRequiredService<UserDbContext>());
+
+            return services;
+        }
+
+        private static IServiceCollection AddApplicationDbContext(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<ApplicationDbContext>(options => options
+                .UseSqlite(configuration.GetConnectionString("Application"), migration => migration
+                .MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+            services.AddScoped<IApplicationDbContext>(provider => provider
+                .GetRequiredService<ApplicationDbContext>());
+
+            return services;
+        }
+
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddUserDbContext(configuration);
+            services.AddApplicationDbContext(configuration);
 
             services.AddScoped<ProtectedLocalStorage>();
             services.AddScoped<ProtectedSessionStorage>();
