@@ -1,0 +1,19 @@
+﻿@page "/"
+
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<AuthorizeView>
+    <Authorized>
+        <span class="py-1">Hi, @context.User.Identity!.Name</span>
+    </Authorized>
+    <NotAuthorized>
+        <br>
+        <span class="py-1">Who are you?</span>
+    </NotAuthorized>
+</AuthorizeView>
+

@@ -1,0 +1,39 @@
+.__construction {
+    border: 2px dashed red;
+    padding: 1em;
+    margin: 1em 0;
+    background-image: url('/images/construction.png');
+}
+
+.__container{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    padding: 1rem;
+    border: 1px solid #e7e7e7;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+.__gap{
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+}
+
+._red{
+    color: red
+}
+
+.__hidden{
+    display: hidden;
+}
+
+.__panel-heading{
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #7a7a7a;
+}

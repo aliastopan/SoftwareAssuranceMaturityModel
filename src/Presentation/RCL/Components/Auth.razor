@@ -1,0 +1,36 @@
+<div class="bg-light form-group shadow p-3 mb-5 bg-white rounded border" style="width: 24rem;">
+
+    <h2 class="mb-3">Sign In</h2>
+
+    <EditForm Model="@auth">
+        <InputText
+            @bind-Value="auth.Username"
+            placeholder="Username"
+            class="form-control mb-2"/>
+
+        <InputText
+            type="password"
+            @bind-Value="auth.Password"
+            placeholder="Password"
+            class="form-control mb-2"/>
+
+        <label for="persistent">Remember Me</label>
+        <input
+            type="checkbox"
+            @bind-value="@auth.PersistentSignIn"
+            name="persistent"
+            class="mb-3"/>
+
+        <button
+            @onclick="@SignInAsync"
+            disabled="@_isAuthenticating"
+            class="form-control btn btn-primary">
+            @buttonText
+        </button>
+    </EditForm>
+
+</div>
+
+@code{
+    string buttonText => _isAuthenticating ? "Signing..." : "Sign In";
+}
