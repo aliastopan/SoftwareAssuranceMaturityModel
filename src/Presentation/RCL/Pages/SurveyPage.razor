@@ -5,16 +5,17 @@
 
         <h4>Kategori: @QManager.CurrentQuestionnaire!.Domain</h4>
         <span>
-            Apakah saat ini devisi IT sebagai pusat data dan pengelolaan Teknologi Informasi (TI) sudah memahami strategi dan tujuan  organisasi?
+            @QManager.CurrentQuestionnaire.Statement
         </span>
         <div class="py-3"></div>
 
         @for (int i = 0; i < QManager.CurrentQuestionnaire.Responds.Count; i++)
         {
             int choiceValue = i+1;
+            string choiceName = $"choice{i}";
             <div class="option">
                 <span class="px-2">
-                    <input type="radio" @onchange="RadioSelection" value="@choiceValue">
+                    <input type="radio" name="survey" @onchange="RadioSelection" value="@choiceValue">
                 </span>
                 <span>@QManager.CurrentQuestionnaire.Responds[i]</span>
             </div>
@@ -22,8 +23,10 @@
     </div>
 
     <div class="pagination">
-        <button class="btn btn-sm btn-dark">Prev</button>
-        <span class="px-3">1/40</span>
-        <button class="btn btn-sm btn-dark">Next</button>
+        <button class="btn btn-sm btn-dark" @onclick="@Prev">Prev</button>
+        <div class="px-3">
+            <span>@_currentPage</span><span>/</span><span>@_maxPage</span>
+        </div>
+        <button class="btn btn-sm btn-dark" @onclick="@Next">Next</button>
     </div>
 </div>

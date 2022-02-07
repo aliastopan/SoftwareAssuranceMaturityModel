@@ -7,17 +7,15 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
     public partial class SurveyPage
     {
         [Inject] public QuestionnaireManager QManager { get; set; } = default!;
-        private int[] _responds;
+        private int[] _responds = new int[0];
         private int _currentChoiceValue;
 
-        public SurveyPage()
+        private int _currentPage => QManager.CurrentIndex + 1;
+        private int _maxPage => QManager.Questionnaires.Count;
+
+        protected override void OnInitialized()
         {
             _responds = new int[QManager.Questionnaires.Count];
-        }
-
-        private void Check()
-        {
-            System.Console.WriteLine($"Value: {_currentChoiceValue}");
         }
 
         private void RadioSelection(ChangeEventArgs args)
@@ -26,12 +24,21 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
             {
                 string argsValue = args.Value.ToString()!;
                 _currentChoiceValue = int.Parse(argsValue);
-
-                // var index = QManager.CurrentQuestionnaire.
-
                 System.Console.WriteLine($"Value: {_currentChoiceValue}");
-
             }
         }
+
+        private void Next()
+        {
+            QManager.Next();
+            StateHasChanged();
+        }
+
+        private void Prev()
+        {
+            QManager.Prev();
+            StateHasChanged();
+        }
+
     }
 }
