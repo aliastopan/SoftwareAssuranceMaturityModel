@@ -11,7 +11,7 @@ using SoftwareAssuranceMaturityModel.Infrastructure.Persistence;
 namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.Application
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220207072702_InitApplication")]
+    [Migration("20220207074429_InitApplication")]
     partial class InitApplication
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,6 +64,9 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.A
                         .HasColumnType("TEXT");
 
                     b.Property<byte>("Flag")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Name")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateOnly>("StartDate")

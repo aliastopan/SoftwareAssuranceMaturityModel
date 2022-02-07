@@ -5,6 +5,7 @@ namespace SoftwareAssuranceMaturityModel.Domain.Entities
     public class Session
     {
         public int Id { get; set; }
+        public int Name { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
         public SessionFlag Flag { get; set; }
