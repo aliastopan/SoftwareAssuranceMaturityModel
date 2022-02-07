@@ -7,6 +7,20 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 {
     public class QuestionnaireManager
     {
+        public List<Questionnaire> Questionnaires { get; set; }
+
+        public QuestionnaireManager()
+        {
+            string source = Marshal.GetDataStorage("survey.json", @"..\..\..\");
+
+            using (StreamReader reader = new StreamReader(source))
+            {
+                string json = reader.ReadToEnd();
+                var result = JsonSerializer.Deserialize<List<Questionnaire>>(json);
+                Questionnaires = result is not null ? result : new();
+            }
+        }
+
         public Result<List<Questionnaire>> TryGetQuestionnaires()
         {
             string source = Marshal.GetDataStorage("survey.json", @"..\..\..\");
