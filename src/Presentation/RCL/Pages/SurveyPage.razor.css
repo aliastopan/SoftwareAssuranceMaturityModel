@@ -1,0 +1,23 @@
+.questionnaire{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.question{
+    padding: 0.5rem;
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+}
+
+.pagination{
+    width: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,1 +1,29 @@
 @page "/survey"
+
+<div class="questionnaire">
+    <div class="question shadow p-3 mb-5 bg-white rounded">
+
+        <h4>Kategori: @QManager.CurrentQuestionnaire!.Domain</h4>
+        <span>
+            Apakah saat ini devisi IT sebagai pusat data dan pengelolaan Teknologi Informasi (TI) sudah memahami strategi dan tujuan  organisasi?
+        </span>
+        <div class="py-3"></div>
+
+        @for (int i = 0; i < QManager.CurrentQuestionnaire.Responds.Count; i++)
+        {
+            int choiceValue = i+1;
+            <div class="option">
+                <span class="px-2">
+                    <input type="radio" name="questionnaire" value="@choiceValue">
+                </span>
+                <span>@QManager.CurrentQuestionnaire.Statement</span>
+            </div>
+        }
+    </div>
+
+    <div class="pagination">
+        <button class="btn btn-sm btn-dark">Prev</button>
+        <span class="px-3">1/40</span>
+        <button class="btn btn-sm btn-dark">Next</button>
+    </div>
+</div>

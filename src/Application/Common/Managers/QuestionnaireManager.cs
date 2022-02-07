@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using System.Text.Json;
 using SoftwareAssuranceMaturityModel.Domain.Entities;
@@ -7,7 +8,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 {
     public class QuestionnaireManager
     {
-        public List<Questionnaire> Questionnaires { get; set; }
+        public List<Questionnaire> Questionnaires { get; set; } = new();
+        public Questionnaire CurrentQuestionnaire { get; set; } = new();
 
         public QuestionnaireManager()
         {
@@ -17,7 +19,13 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             {
                 string json = reader.ReadToEnd();
                 var result = JsonSerializer.Deserialize<List<Questionnaire>>(json);
-                Questionnaires = result is not null ? result : new();
+
+                if(result is not null)
+                {
+                    Questionnaires = result;
+                    CurrentQuestionnaire = Questionnaires.First();
+                }
+
             }
         }
 
