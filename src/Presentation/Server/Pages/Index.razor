@@ -1,5 +1,7 @@
 ﻿@page "/"
-
+@using SoftwareAssuranceMaturityModel.Application.Common.Managers
+@using SoftwareAssuranceMaturityModel.Application.Common.Helpers
+@inject QuestionnaireManager QManager
 
 <PageTitle>Index</PageTitle>
 
@@ -17,3 +19,16 @@ Welcome to your new app.
     </NotAuthorized>
 </AuthorizeView>
 
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            var result = QManager.TryGetQuestionnaires();
+            if(result.Success)
+            {
+                System.Console.WriteLine($"Result: {result.Value.Count}");
+            }
+        }
+    }
+}

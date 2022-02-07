@@ -3,6 +3,7 @@ using FluentValidation;
 using SoftwareAssuranceMaturityModel.Application.Common.Models.User;
 using SoftwareAssuranceMaturityModel.Application.Common.Sercurity;
 using SoftwareAssuranceMaturityModel.Application.Common.Validators;
+using SoftwareAssuranceMaturityModel.Application.Common.Managers;
 
 namespace SoftwareAssuranceMaturityModel.Application
 {
@@ -12,6 +13,8 @@ namespace SoftwareAssuranceMaturityModel.Application
         {
             services.AddTransient<IValidator<UserRegistrationDto>, UserRegistrationDtoValidator>();
             services.AddScoped<Authentication>();
+
+            services.AddSingleton<QuestionnaireManager>();
 
             return services;
         }
