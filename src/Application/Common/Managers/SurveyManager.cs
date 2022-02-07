@@ -34,5 +34,18 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
         public Questionnaire CurrentQuestionnaire => Questionnaires[CurrentIndex];
         public Respond CurrentRespond => Responds[CurrentIndex];
 
+
+        public void Next()
+        {
+            if(CurrentIndex < Questionnaires.Count)
+                CurrentIndex++;
+        }
+
+        public void Prev()
+        {
+            if(CurrentIndex > 0)
+                CurrentIndex--;
+        }
+
     }
 }

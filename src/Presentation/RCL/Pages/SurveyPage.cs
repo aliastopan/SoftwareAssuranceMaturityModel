@@ -9,9 +9,24 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
     {
         [Inject] SurveyManager SurveyManager { get; set; } = default!;
 
+        private int _currentPage => SurveyManager.CurrentIndex + 1;
+        private int _maxPage => SurveyManager.Questionnaires.Count;
+
         protected override void OnInitialized()
         {
             Console.WriteLine($"Count: {SurveyManager.Responds.Count}");
+        }
+
+        protected void Next()
+        {
+            SurveyManager.Next();
+            StateHasChanged();
+        }
+
+        protected void Prev()
+        {
+            SurveyManager.Prev();
+            StateHasChanged();
         }
 
 

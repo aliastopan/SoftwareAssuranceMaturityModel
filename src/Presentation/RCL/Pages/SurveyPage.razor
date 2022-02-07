@@ -1,48 +1,26 @@
 @page "/survey"
 
-
-  <EditForm Model="SurveyManager">
-    <InputRadioGroup @bind-Value="SurveyManager.CurrentRespond.Value">
-        @for (int i = 0; i < 3; i++)
-        {
-            int choice = i+1;
-            <InputRadio @onclick="@_Debug" Value="@choice" /> @SurveyManager.CurrentQuestionnaire.Responds[i]
-            <br>
-        }
-    </InputRadioGroup>
-  </EditForm>
-
-
-
-@code{
-    void _Debug()
-    {
-        System.Console.WriteLine($": {SurveyManager.Responds[0].Value}");
-    }
-}
-
-
-
-@* <div class="questionnaire">
+<div class="questionnaire">
     <div class="question shadow p-3 mb-5 bg-white rounded">
 
-        <h4>Kategori: @QManager.CurrentQuestionnaire!.Domain</h4>
+        <h4>Kategori: @SurveyManager.CurrentQuestionnaire!.Domain</h4>
         <span>
-            @QManager.CurrentQuestionnaire.Statement
+            @SurveyManager.CurrentQuestionnaire.Statement
         </span>
         <div class="py-3"></div>
 
-        @for (int i = 0; i < QManager.CurrentQuestionnaire.Responds.Count; i++)
-        {
-            int choiceValue = i+1;
-            string choiceName = $"choice{i}";
-            <div class="option">
-                <span class="px-2">
-                    <input type="radio" name="survey" @onchange="RadioSelection" value="@choiceValue">
-                </span>
-                <span>@QManager.CurrentQuestionnaire.Responds[i]</span>
-            </div>
-        }
+        <EditForm Model="SurveyManager">
+        <InputRadioGroup @bind-Value="SurveyManager.CurrentRespond.Value">
+            @for (int i = 0; i < SurveyManager.CurrentQuestionnaire.Responds.Count; i++)
+            {
+                int choice = i+1;
+                <div class="option">
+                    <span class="px-2"><InputRadio Value="@choice" /></span>
+                    <span>@SurveyManager.CurrentQuestionnaire.Responds[i]</span>
+                </div>
+            }
+            </InputRadioGroup>
+        </EditForm>
     </div>
 
     <div class="pagination">
@@ -52,4 +30,19 @@
         </div>
         <button class="btn btn-sm btn-dark" @onclick="@Next">Next</button>
     </div>
-</div> *@
+</div>
+
+    <button @onclick="@_Debug">Bleh</button>
+
+@code{
+    void _Debug()
+    {
+        for (int i = 0; i < SurveyManager.Responds.Count; i++)
+        {
+            System.Console.WriteLine($"#{i}: {SurveyManager.Responds[i].Value}");
+        }
+    }
+}
+
+
+
