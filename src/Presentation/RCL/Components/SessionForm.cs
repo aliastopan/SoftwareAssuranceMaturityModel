@@ -9,7 +9,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Components
         [Inject] private CreateSession _createSession { get; init; } = default!;
         private NewSessionDto _newSession { get; set; } = new();
 
-        private async Task Submit()
+        private async Task SubmitAsync()
         {
             await _createSession.Add(_newSession);
         }
