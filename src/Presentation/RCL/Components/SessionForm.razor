@@ -1,0 +1,15 @@
+
+<EditForm Model="@_newSession">
+    <InputText
+        id="session-name"
+        class="form-control"
+        placeholder="Session Name"
+        @bind-Value="_newSession.Name">
+    </InputText>
+    <label for="date-start"> Start Date: </label>
+    <InputDate
+        id="date-start"
+        class="form-control"
+        @bind-Value="_newSession.StartDate">
+    </InputDate>
+</EditForm>

@@ -1,16 +1,17 @@
-using SoftwareAssuranceMaturityModel.Domain.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SoftwareAssuranceMaturityModel.Domain.Entities
+namespace SoftwareAssuranceMaturityModel.Application.Common.Models.Session
 {
-    public class Session
+    public class NewSessionDto
     {
-        public int Id { get; set; }
         public string? Name { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
-        public SessionFlag Flag { get; set; }
 
-        public Session()
+        public NewSessionDto()
         {
             StartDate = new DateOnly(
                 DateTime.Now.Year,
@@ -23,9 +24,6 @@ namespace SoftwareAssuranceMaturityModel.Domain.Entities
                 DateTime.Now.Month,
                 DateTime.Now.Day
             );
-
-            Flag = SessionFlag.OnGoing;
         }
-
     }
 }
