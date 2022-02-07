@@ -10,6 +10,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
     {
         public List<Questionnaire> Questionnaires { get; set; } = new();
         public Questionnaire CurrentQuestionnaire { get; set; } = new();
+        public int CurrentIndex { get; private set; }
 
         public QuestionnaireManager()
         {
@@ -23,9 +24,27 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 if(result is not null)
                 {
                     Questionnaires = result;
-                    CurrentQuestionnaire = Questionnaires.First();
+                    CurrentIndex = 0;
+                    CurrentQuestionnaire = Questionnaires[CurrentIndex];
                 }
+            }
+        }
 
+        public void Next()
+        {
+            if(CurrentIndex < Questionnaires.Count)
+            {
+                CurrentIndex++;
+                CurrentQuestionnaire = Questionnaires[CurrentIndex];
+            }
+        }
+
+        public void Prev()
+        {
+            if(CurrentIndex > 0)
+            {
+                CurrentIndex--;
+                CurrentQuestionnaire = Questionnaires[CurrentIndex];
             }
         }
 

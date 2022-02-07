@@ -14,9 +14,9 @@
             int choiceValue = i+1;
             <div class="option">
                 <span class="px-2">
-                    <input type="radio" name="questionnaire" value="@choiceValue">
+                    <input type="radio" @onchange="RadioSelection" value="@choiceValue">
                 </span>
-                <span>@QManager.CurrentQuestionnaire.Statement</span>
+                <span>@QManager.CurrentQuestionnaire.Responds[i]</span>
             </div>
         }
     </div>
