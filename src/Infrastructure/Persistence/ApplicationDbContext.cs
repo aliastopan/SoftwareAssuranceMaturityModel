@@ -12,6 +12,7 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence
         { }
 
         public DbSet<Session> Sessions => Set<Session>();
+        public DbSet<Respond> Responds => Set<Respond>();
 
         public new void SaveChanges()
             => base.SaveChanges();
