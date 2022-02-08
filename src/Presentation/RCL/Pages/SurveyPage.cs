@@ -11,7 +11,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         private int _currentPage => SurveyManager.CurrentIndex + 1;
         private int _maxPage => SurveyManager.Questionnaires.Count;
-        private bool _isSubmitable = false;
+        private bool _isDisabled = true;
 
         protected override void OnInitialized()
         {
@@ -35,49 +35,14 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         protected void RespondsCheck()
         {
+
             foreach (var respond in SurveyManager.Responds)
             {
                 if(respond.Value == 0)
                     return;
             }
 
-            _isSubmitable = true;
+            _isDisabled = false;
         }
-
-
-        // [Inject] public QuestionnaireManager QManager { get; set; } = default!;
-        // private int[] _responds = new int[0];
-        // private int _currentChoiceValue;
-
-        // private int _currentPage => QManager.CurrentIndex + 1;
-        // private int _maxPage => QManager.Questionnaires.Count;
-
-        // protected override void OnInitialized()
-        // {
-        //     _responds = new int[QManager.Questionnaires.Count];
-        // }
-
-        // private void RadioSelection(ChangeEventArgs args)
-        // {
-        //     if(args.Value is not null)
-        //     {
-        //         string argsValue = args.Value.ToString()!;
-        //         _currentChoiceValue = int.Parse(argsValue);
-        //         System.Console.WriteLine($"Value: {_currentChoiceValue}");
-        //     }
-        // }
-
-        // private void Next()
-        // {
-        //     QManager.Next();
-        //     StateHasChanged();
-        // }
-
-        // private void Prev()
-        // {
-        //     QManager.Prev();
-        //     StateHasChanged();
-        // }
-
     }
 }

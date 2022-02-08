@@ -32,7 +32,14 @@
     </div>
 </div>
 
-    <button @onclick="@_Debug">Bleh</button>
+@if(SurveyManager.CurrentIndex == 5)
+{
+    RespondsCheck();
+}
+
+<button class="btn btn-sm btn-primary" disabled="@_isDisabled">Submit</button>
+<button @onclick="@_Debug">DEBUG</button>
+
 
 @code{
     void _Debug()
