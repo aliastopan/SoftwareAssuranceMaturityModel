@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 @namespace SoftwareAssuranceMaturityModel.Presentation.Server.Pages.Layout
-
+@using SoftwareAssuranceMaturityModel.Application.Common.Sercurity
 
 <PageTitle>Server</PageTitle>
 
@@ -10,7 +10,20 @@
     </div>
 
     <main>
-        <div class="top-row px-4"></div>
+        <div class="top-row px-4">
+            <span class="brand">The Software Assurance Maturity Model</span>
+            <span class="auth">
+                <AuthorizeView>
+                    <Authorized>
+                        <a href="/" @onclick="@SignOutAsync">Sign Out</a>
+                    </Authorized>
+                    <NotAuthorized>
+                        <a href="/sign-in">Sign In</a>
+                    </NotAuthorized>
+                </AuthorizeView>
+            </span>
+
+        </div>
 
         <article class="content px-4">
             @Body
@@ -19,5 +32,11 @@
 </div>
 
 @code{
+
+    [Inject] private Authentication _auth { get; init; } = default!;
+    private async Task SignOutAsync()
+    {
+        await _auth.SignOutAsync();
+    }
 
 }

@@ -30,5 +30,10 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Sercurity
                 return Result.Fail(authentication.Error!);
             }
         }
+
+        public async Task SignOutAsync()
+        {
+            await _authService.SignOutAsync();
+        }
     }
 }
