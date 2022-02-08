@@ -11,6 +11,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         private int _currentPage => SurveyManager.CurrentIndex + 1;
         private int _maxPage => SurveyManager.Questionnaires.Count;
+        private bool _isSubmitable = false;
 
         protected override void OnInitialized()
         {
@@ -19,6 +20,9 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         protected void Next()
         {
+            if(SurveyManager.CurrentRespond.Value == 0)
+                return;
+
             SurveyManager.Next();
             StateHasChanged();
         }
@@ -27,6 +31,17 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
         {
             SurveyManager.Prev();
             StateHasChanged();
+        }
+
+        protected void RespondsCheck()
+        {
+            foreach (var respond in SurveyManager.Responds)
+            {
+                if(respond.Value == 0)
+                    return;
+            }
+
+            _isSubmitable = true;
         }
 
 
