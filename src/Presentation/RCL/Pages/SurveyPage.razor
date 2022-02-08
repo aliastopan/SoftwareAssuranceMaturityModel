@@ -15,7 +15,7 @@
             {
                 int choice = i+1;
                 <div class="option">
-                    <span class="px-2"><InputRadio Value="@choice" /></span>
+                    <span class="px-2"><InputRadio @onclick="@RespondsCheck" Value="@choice"/></span>
                     <span>@SurveyManager.CurrentQuestionnaire.Responds[i]</span>
                 </div>
             }
@@ -32,16 +32,14 @@
     </div>
 </div>
 
-@if(SurveyManager.CurrentIndex == 5)
-{
-    RespondsCheck();
-}
+
 
 <button class="btn btn-sm btn-primary" disabled="@_isDisabled">Submit</button>
 <button @onclick="@_Debug">DEBUG</button>
 
 
 @code{
+
     void _Debug()
     {
         for (int i = 0; i < SurveyManager.Responds.Count; i++)

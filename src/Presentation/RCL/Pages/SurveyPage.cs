@@ -35,7 +35,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         protected void RespondsCheck()
         {
-
+            System.Console.WriteLine("Respond Check");
             foreach (var respond in SurveyManager.Responds)
             {
                 if(respond.Value == 0)

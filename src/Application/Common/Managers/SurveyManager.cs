@@ -37,7 +37,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
         public void Next()
         {
-            if(CurrentIndex < Questionnaires.Count)
+            if(CurrentIndex < (Questionnaires.Count - 1))
                 CurrentIndex++;
         }
 
