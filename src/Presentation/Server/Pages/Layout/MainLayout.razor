@@ -5,9 +5,13 @@
 <PageTitle>Server</PageTitle>
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    <AuthorizeView Roles="Developer, Administrator">
+        <Authorized>
+            <div class="sidebar">
+                <NavMenu />
+            </div>
+        </Authorized>
+    </AuthorizeView>
 
     <main>
         <div class="top-row px-4">
