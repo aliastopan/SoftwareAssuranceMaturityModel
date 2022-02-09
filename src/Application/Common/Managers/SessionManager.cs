@@ -17,7 +17,10 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
         public async Task<Result> SessionCheck()
         {
-            var result = await _applicationDbContext.Sessions.LastOrDefaultAsync<Session>();
+            var result = await _applicationDbContext.Sessions
+                .OrderBy(x => x.Id)
+                .LastOrDefaultAsync<Session>();
+
             if(result is null)
                 return Result.Fail(ErrorMessage.NO_SESSION_FOUND);
 
