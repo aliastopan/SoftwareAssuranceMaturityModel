@@ -7,7 +7,8 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 {
     public partial class SurveyPage
     {
-        [Inject] SurveyManager SurveyManager { get; set; } = default!;
+        [Inject] SurveyManager SurveyManager { get; init; } = default!;
+        [Inject] NavigationManager NavManager { get; init; } = default!;
 
         private int _currentPage => SurveyManager.CurrentIndex + 1;
         private int _maxPage => SurveyManager.Questionnaires.Count;
@@ -31,6 +32,12 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
         {
             SurveyManager.Prev();
             StateHasChanged();
+        }
+
+        protected async Task SubmitAsync()
+        {
+            await SurveyManager.Submit();
+            NavManager.NavigateTo("/developer");
         }
 
         protected void SubmitableCheck()

@@ -32,7 +32,11 @@
     </div>
 </div>
 
-<button class="btn btn-sm btn-primary" disabled="@_isDisabled">Submit</button>
+<button class="btn btn-sm btn-primary"
+    disabled="@_isDisabled"
+    @onclick="@SubmitAsync">
+    Submit
+</button>
 @* <button @onclick="@_Debug">DEBUG</button> *@
 
 
