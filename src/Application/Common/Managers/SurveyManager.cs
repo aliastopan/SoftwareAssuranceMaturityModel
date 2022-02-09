@@ -9,7 +9,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
     {
         public SurveyManager()
         {
-            string source = Marshal.GetDataStorage("survey.json", @"..\..\..\");
+            string source = Marshal.GetDataStorage("survey-3.json", @"..\..\..\");
 
             using (StreamReader reader = new StreamReader(source))
             {

@@ -1,0 +1,37 @@
+[
+    {
+      "Id": 1,
+      "Domain": "D1",
+      "Statement": "Apakah saat ini devisi IT sebagai pusat data dan pengelolaan Teknologi Informasi (TI) sudah memahami strategi dan tujuan  organisasi?",
+      "Responds": [
+        "Pengelola TI tidak memahami strategi dan tujuan TI",
+        "Pengelola TI hanya mengetahui sedikit/sebagian dari strategi/tujuan bisnis organisasi",
+        "Pengelola TI mengetahui dengan baik strategi dan tujuan bisnis organisasi",
+        "Pangelola TI mengetahui dengan baik dan mendorong seluruh staf TI untuk mengerti strategi dan tujuan bisnis organisasi",
+        "Pengertian mengenai strategi dan tujuan bisnis organisasi menjadi suatu keharusan"
+      ]
+    },
+    {
+      "Id": 2,
+      "Domain": "D1",
+      "Statement": "Bagaimana pemahaman pimpinan sebagai pengelola organisasi mengerti dan memahami lingkup kegiatan TI di PT. ABC?",
+      "Responds": [
+        "Pengelola organisasi tidak memahami TI sama sekali",
+        "Pengelola organisasi memahami TI secara terbatas",
+        "Pengelola organisasi memahami TI dengan baik",
+        "Pengelola organisasi mengerti dan memahami TI dengan baik, serta menyadari bahwa TI merupakan hal yang sangat potensial untuk menunjang kegiatan di Kominfo",
+        "Pengelola organisasi mengerti dan memahami Tl dengan sangat baik dan menyadari bahwa hal ini merupakan suatu keharusan"
+      ]
+    },
+    {
+      "Id": 3,
+      "Domain": "D1",
+      "Statement": "Mana pernyataan berikut yang paling cocok menggambarkan metode (mencakup penggunan intranet, portal, milis, e-mail, e-office, rapat, pelatihan, dsb) yang paling sering diselenggarakan di organisasi dalam rangka aktivitas pembelajaran dalam lingkup organisasi (kolaborasi bisnis dan TI) di lingkungan perusahaan (mencakup aspek berbagi pengalaman, pemecahan masalah, diskusi objektif dan faktor-faktor vital pendukung kesuksesan/CSF)?",
+      "Responds": [
+        "Casual, ad-hoc (hanya ada pada saat tertentu ketika ada kebutuhan dan bersifat terbatas seperti observasi pegawai, berbagi cerita, pree meeting, dsb)",
+        "Regular dan jelas, melalui rapat-rapat pada setiap unit kerja",
+        "Secara formal dan didukung oleh pimpinan",
+        "Formal, terpadu dengan dukungan pimpinan senior dan menengah, adanya monitoring dan umpan balik dalam rangka pengukuran dan evaluasi untuk hasil yang efektif"
+      ]
+    }
+]
