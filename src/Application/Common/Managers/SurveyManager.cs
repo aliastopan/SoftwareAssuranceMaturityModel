@@ -1,16 +1,22 @@
 using System.Collections.Generic;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 using SoftwareAssuranceMaturityModel.Domain.Entities;
+using SoftwareAssuranceMaturityModel.Domain.Enums;
 using SoftwareAssuranceMaturityModel.Application.Common.Helpers;
+using SoftwareAssuranceMaturityModel.Application.Common.Interfaces;
 
 namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 {
     public class SurveyManager
     {
-        public SurveyManager()
-        {
-            string source = Marshal.GetDataStorage("survey-3.json", @"..\..\..\");
+        private IApplicationDbContext _applicationDbContext;
 
+        public SurveyManager(IApplicationDbContext  applicationDbContext)
+        {
+            _applicationDbContext = applicationDbContext;
+
+            string source = Marshal.GetDataStorage("survey-3.json", @"..\..\..\");
             using (StreamReader reader = new StreamReader(source))
             {
                 string json = reader.ReadToEnd();
@@ -45,6 +51,36 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
         {
             if(CurrentIndex > 0)
                 CurrentIndex--;
+        }
+
+        public async Task Submit()
+        {
+            var session = await GetCurrentSession();
+            if(session.Failure)
+                return;
+
+            Batch batch = new Batch{
+                Session = session.Value,
+                Responds = this.Responds
+            };
+
+            await _applicationDbContext.Batches.AddAsync(batch);
+            _applicationDbContext.SaveChanges();
+        }
+
+        private async Task<Result<Session>> GetCurrentSession()
+        {
+            var result = await _applicationDbContext.Sessions
+                .OrderBy(x => x.Id)
+                .LastOrDefaultAsync<Session>();
+
+            if(result is null)
+                return Result.Fail<Session>(ErrorMessage.NO_SESSION_FOUND);
+
+            if(result.Flag != SessionFlag.OnGoing)
+                return Result.Fail<Session>(ErrorMessage.NO_SESSION_FOUND);
+            else
+                return Result.Ok<Session>(result);
         }
 
     }
