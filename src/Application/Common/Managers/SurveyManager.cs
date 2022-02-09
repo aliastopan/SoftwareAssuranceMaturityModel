@@ -26,18 +26,46 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
                 for (int i = 0; i < totalRespondent; i++)
                 {
-                    var x = new List<Respond>();
+                    var perRespond = new List<Respond>();
                     for (int j = 0; j < totalRespond; j++)
                     {
-                        int d = DictionaryDomain.Domains[Questionnaires[j].Domain];
+                        int domain = DictionaryDomain.Domains[Questionnaires[j].Domain];
 
-                        x.Add(new Respond{
-                            DomainRespond = d,
+                        perRespond.Add(new Respond{
+                            DomainRespond = domain,
                             Value = recap[i][j]
                         });
                     }
+
+                    RecapResponds.Add(perRespond);
                 }
             }
+
+            int x = RecapResponds.Count;
+            int y = RecapResponds[0].Count;
+
+            System.Console.WriteLine($"Recap: {x * y}");
+        }
+
+        public async Task SubmitRecapAsync()
+        {
+            var session = await GetCurrentSession();
+            if(session.Failure)
+                return;
+
+            int totalRespondent = RecapResponds.Count;
+
+            for (int i = 0; i < totalRespondent; i++)
+            {
+                Batch batch = new Batch{
+                    Session = session.Value,
+                    Responds = RecapResponds[i]
+                };
+
+                await _applicationDbContext.Batches.AddAsync(batch);
+                _applicationDbContext.SaveChanges();
+            }
+
         }
 
         #endregion
