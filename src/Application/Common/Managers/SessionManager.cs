@@ -28,7 +28,21 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 return Result.Fail(ErrorMessage.NO_SESSION_FOUND);
             else
                 return Result.Ok();
+        }
 
+        public async Task<Result<Session>> GetCurrentSession()
+        {
+            var result = await _applicationDbContext.Sessions
+                .OrderBy(x => x.Id)
+                .LastOrDefaultAsync<Session>();
+
+            if(result is null)
+                return Result.Fail<Session>(ErrorMessage.NO_SESSION_FOUND);
+
+            if(result.Flag != SessionFlag.OnGoing)
+                return Result.Fail<Session>(ErrorMessage.NO_SESSION_FOUND);
+            else
+                return Result.Ok<Session>(result);
         }
 
 
