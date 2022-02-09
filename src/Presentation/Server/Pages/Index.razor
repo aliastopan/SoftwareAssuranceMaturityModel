@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using SoftwareAssuranceMaturityModel.Application.Common.Managers
 
 <PageTitle>Index</PageTitle>
 
@@ -11,9 +12,30 @@
     <p>
         <i>The Software Assurance Maturity Model</i> mendukung siklus hidup perangkat lunak yang lengkap dan merupakan teknologi dan agnostik proses.
     </p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Mulai Survey</a>
+    <AuthorizeView>
+        <Authorized>
+            @if(IsSessionExist())
+            {
+                <a class="btn btn-primary btn-lg" href="/survey" role="button">Mulai Survey</a>
+            }
+            else
+            {
+                <a class="btn btn-primary btn-lg" href="/notfound" role="button">Mulai Survey</a>
+            }
+        </Authorized>
+        <NotAuthorized>
+            <a class="btn btn-primary btn-lg" href="/sign-in" role="button">Mulai Survey</a>
+        </NotAuthorized>
+    </AuthorizeView>
 </div>
 
 @code {
+    [Inject] protected SessionManager SessionManager { get; set; } = default!;
+
+    private bool IsSessionExist()
+    {
+        var result = SessionManager.SessionCheck().GetAwaiter().GetResult();
+        return result.Success;
+    }
 
 }

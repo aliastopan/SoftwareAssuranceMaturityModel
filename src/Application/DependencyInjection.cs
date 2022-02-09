@@ -16,6 +16,8 @@ namespace SoftwareAssuranceMaturityModel.Application
             services.AddScoped<Authentication>();
 
             services.AddTransient<CreateSession>();
+
+            services.AddScoped<SessionManager>();
             services.AddTransient<SurveyManager>();
 
             return services;

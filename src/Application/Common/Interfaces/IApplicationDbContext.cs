@@ -9,7 +9,6 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Interfaces
         DbSet<Batch> Batches { get; }
         DbSet<Respond> Responds { get; }
 
-
         void SaveChanges();
     }
 }
