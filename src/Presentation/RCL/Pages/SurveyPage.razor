@@ -15,7 +15,7 @@
             {
                 int choice = i+1;
                 <div class="option">
-                    <span class="px-2"><InputRadio @onclick="@SubmitableCheck" Value="@choice"/></span>
+                    <span class="px-2"><InputRadio @onclick="@OnSelectedOption" Value="@choice"/></span>
                     <span>@SurveyManager.CurrentQuestionnaire.Responds[i]</span>
                 </div>
             }
@@ -41,7 +41,6 @@
 
 
 @code{
-
     void _Debug()
     {
         for (int i = 0; i < SurveyManager.Responds.Count; i++)

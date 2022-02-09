@@ -16,7 +16,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
         {
             _applicationDbContext = applicationDbContext;
 
-            string source = Marshal.GetDataStorage("survey-3.json", @"..\..\..\");
+            string source = Marshal.GetDataStorage("survey.json", @"..\..\..\");
             using (StreamReader reader = new StreamReader(source))
             {
                 string json = reader.ReadToEnd();

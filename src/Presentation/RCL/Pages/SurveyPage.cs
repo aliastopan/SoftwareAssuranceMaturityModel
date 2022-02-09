@@ -40,9 +40,14 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
             NavManager.NavigateTo("/developer");
         }
 
-        protected void SubmitableCheck()
+        protected void OnSelectedOption()
         {
+            int domain = DictionaryDomain.Domains[SurveyManager.CurrentQuestionnaire.Domain];
+            System.Console.WriteLine($"Domain {domain}");
+
+            SurveyManager.CurrentRespond.DomainRespond = domain;
             System.Console.WriteLine("Submitable");
+
             if(SurveyManager.CurrentIndex == SurveyManager.Questionnaires.Count - 1)
             {
                 _isDisabled = false;
