@@ -10,6 +10,40 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 {
     public class SurveyManager
     {
+        #region RECAP
+        public List<List<Respond>> RecapResponds = new();
+
+        private void Recap()
+        {
+            string source = Marshal.GetDataStorage("responds.json", @"..\..\..\");
+            using (StreamReader reader = new StreamReader(source))
+            {
+                string json = reader.ReadToEnd();
+                List<int[]> recap = JsonSerializer.Deserialize<List<int[]>>(json)!;
+
+                int totalRespondent = recap.Count;
+                int totalRespond = recap[0].Length;
+
+                for (int i = 0; i < totalRespondent; i++)
+                {
+                    var x = new List<Respond>();
+                    for (int j = 0; j < totalRespond; j++)
+                    {
+                        int d = DictionaryDomain.Domains[Questionnaires[j].Domain];
+
+                        x.Add(new Respond{
+                            DomainRespond = d,
+                            Value = recap[i][j]
+                        });
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+
+
         private IApplicationDbContext _applicationDbContext;
 
         public SurveyManager(IApplicationDbContext  applicationDbContext)
@@ -32,6 +66,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             Responds = new();
             for (int i = 0; i < Questionnaires.Count; i++)
                 Responds.Add(new());
+
+            Recap();
 
         }
         public List<Questionnaire> Questionnaires { get; set; } = new();
