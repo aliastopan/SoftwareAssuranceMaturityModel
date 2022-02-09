@@ -33,6 +33,15 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
             StateHasChanged();
         }
 
+        protected void SubmitableCheck()
+        {
+            System.Console.WriteLine("Submitable");
+            if(SurveyManager.CurrentIndex == SurveyManager.Questionnaires.Count - 1)
+            {
+                _isDisabled = false;
+            }
+        }
+
         protected void RespondsCheck()
         {
             System.Console.WriteLine("Respond Check");

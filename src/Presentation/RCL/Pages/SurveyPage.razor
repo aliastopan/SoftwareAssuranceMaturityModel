@@ -15,7 +15,7 @@
             {
                 int choice = i+1;
                 <div class="option">
-                    <span class="px-2"><InputRadio @onclick="@RespondsCheck" Value="@choice"/></span>
+                    <span class="px-2"><InputRadio @onclick="@SubmitableCheck" Value="@choice"/></span>
                     <span>@SurveyManager.CurrentQuestionnaire.Responds[i]</span>
                 </div>
             }
@@ -32,10 +32,8 @@
     </div>
 </div>
 
-
-
 <button class="btn btn-sm btn-primary" disabled="@_isDisabled">Submit</button>
-<button @onclick="@_Debug">DEBUG</button>
+@* <button @onclick="@_Debug">DEBUG</button> *@
 
 
 @code{
