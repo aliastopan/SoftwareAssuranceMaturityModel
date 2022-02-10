@@ -49,7 +49,8 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.A
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    DomainRespond = table.Column<int>(type: "INTEGER", nullable: false),
+                    QNumber = table.Column<int>(type: "INTEGER", nullable: false),
+                    QDomain = table.Column<int>(type: "INTEGER", nullable: false),
                     Value = table.Column<int>(type: "INTEGER", nullable: false),
                     BatchId = table.Column<int>(type: "INTEGER", nullable: true)
                 },

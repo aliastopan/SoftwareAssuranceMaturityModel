@@ -32,7 +32,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                         int domain = DictionaryDomain.Domains[Questionnaires[j].Domain];
 
                         perRespond.Add(new Respond{
-                            DomainRespond = domain,
+                            QNumber = j,
+                            QDomain = domain,
                             Value = recap[i][j]
                         });
                     }

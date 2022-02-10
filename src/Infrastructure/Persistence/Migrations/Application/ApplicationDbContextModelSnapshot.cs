@@ -42,7 +42,10 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.A
                     b.Property<int?>("BatchId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DomainRespond")
+                    b.Property<int>("QDomain")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("QNumber")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Value")

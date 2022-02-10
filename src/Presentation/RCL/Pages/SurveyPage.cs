@@ -45,7 +45,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
             int domain = DictionaryDomain.Domains[SurveyManager.CurrentQuestionnaire.Domain];
             System.Console.WriteLine($"Domain {domain}");
 
-            SurveyManager.CurrentRespond.DomainRespond = domain;
+            SurveyManager.CurrentRespond.QDomain = domain;
             System.Console.WriteLine("Submitable");
 
             if(SurveyManager.CurrentIndex == SurveyManager.Questionnaires.Count - 1)

@@ -11,7 +11,7 @@ using SoftwareAssuranceMaturityModel.Infrastructure.Persistence;
 namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.Application
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220209135833_InitApplication")]
+    [Migration("20220210042042_InitApplication")]
     partial class InitApplication
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,10 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Persistence.Migrations.A
                     b.Property<int?>("BatchId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DomainRespond")
+                    b.Property<int>("QDomain")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("QNumber")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Value")
