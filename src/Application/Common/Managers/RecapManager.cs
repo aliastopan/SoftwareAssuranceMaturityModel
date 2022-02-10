@@ -21,7 +21,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             System.Console.WriteLine($"Batches: {Batches.Count}");
 
             for (int i = 0; i < 39; i++)
-                AvgPerQ.Add(new Average());
+                Averages.Add(new Average());
 
             TotalRecap();
             _maxQ = Batches[0].Responds.Count;
@@ -31,11 +31,11 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
         public int MaxQ => _maxQ;
         private IApplicationDbContext _applicationDbContext;
         public List<Batch> Batches = new();
-        public List<Average> AvgPerQ = new();
+        public List<Average> Averages = new();
 
         public void TotalRecap()
         {
-            for (int i = 0; i < AvgPerQ.Count; i++)
+            for (int i = 0; i < Averages.Count; i++)
             {
                 var responds = _applicationDbContext.Responds
                     .Where(n => n.QNumber == i)
@@ -48,15 +48,35 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 }
                 avg = (float) avg/responds.Count;
 
-                AvgPerQ[i].Value = avg;
-                AvgPerQ[i].QDomain = Batches[0].Responds[i].QDomain;
+                Averages[i].Value = avg;
+                Averages[i].QDomain = Batches[0].Responds[i].QDomain;
 
             }
         }
 
-        public float PerDomainAvg(int qDomain)
+        public List<List<Average>> GetAveragesPerDomain()
         {
-            var avgPerDomain = AvgPerQ
+            var d1 = Averages.Where(x => x.QDomain == 1).ToList();
+            var d2 = Averages.Where(x => x.QDomain == 2).ToList();
+            var d3 = Averages.Where(x => x.QDomain == 3).ToList();
+            var d4 = Averages.Where(x => x.QDomain == 4).ToList();
+            var d5 = Averages.Where(x => x.QDomain == 5).ToList();
+            var d6 = Averages.Where(x => x.QDomain == 6).ToList();
+
+            List<List<Average>> averages = new();
+
+            averages.Add(d1);
+            averages.Add(d2);
+            averages.Add(d3);
+            averages.Add(d4);
+            averages.Add(d5);
+            averages.Add(d6);
+
+            return averages;
+        }
+        public float AvgPerDomain(int qDomain)
+        {
+            var avgPerDomain = Averages
                     .Where(v => v.QDomain == qDomain)
                     .ToList();
 
@@ -68,8 +88,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
             return (float) avg/avgPerDomain.Count;
         }
-
-        public float PerQuestionnaireAvg(int qNumber)
+        public float AvgPerQuestionnaire(int qNumber)
         {
             var responds = _applicationDbContext.Responds
                 .Where(n => n.QNumber == qNumber)
@@ -83,9 +102,10 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             return (float) avg/responds.Count;
         }
 
+
         public int QPerDomainCount(int qDomain)
         {
-            return AvgPerQ
+            return Averages
                 .Where(v => v.QDomain == qDomain)
                 .ToList().Count;
         }

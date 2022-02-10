@@ -29,6 +29,8 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
                 System.Console.WriteLine($"Q Count: {q6}");
 
 
+                // System.Console.WriteLine($"Q #{1} Avg: {_recapManager.Av}");
+
         
                 // _recapManager.TotalRecap();
                 // var x = _recapManager.PerDomainAvg(1);
