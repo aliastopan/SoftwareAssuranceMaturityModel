@@ -19,6 +19,7 @@ namespace SoftwareAssuranceMaturityModel.Application
 
             services.AddScoped<SessionManager>();
             services.AddTransient<SurveyManager>();
+            services.AddSingleton<RecapManager>();
 
             return services;
         }
