@@ -23,8 +23,12 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             for (int i = 0; i < 39; i++)
                 AvgPerQ.Add(new Average());
 
+            TotalRecap();
+            _maxQ = Batches[0].Responds.Count;
         }
 
+        private int _maxQ;
+        public int MaxQ => _maxQ;
         private IApplicationDbContext _applicationDbContext;
         public List<Batch> Batches = new();
         public List<Average> AvgPerQ = new();
@@ -46,6 +50,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
                 AvgPerQ[i].Value = avg;
                 AvgPerQ[i].QDomain = Batches[0].Responds[i].QDomain;
+
             }
         }
 
@@ -76,6 +81,13 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 avg += (float) responds[i].Value;
             }
             return (float) avg/responds.Count;
+        }
+
+        public int QPerDomainCount(int qDomain)
+        {
+            return AvgPerQ
+                .Where(v => v.QDomain == qDomain)
+                .ToList().Count;
         }
     }
 }
