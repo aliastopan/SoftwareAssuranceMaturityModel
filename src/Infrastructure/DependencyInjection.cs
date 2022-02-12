@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SoftwareAssuranceMaturityModel.Infrastructure.Persistence;
 using SoftwareAssuranceMaturityModel.Infrastructure.Services;
 using SoftwareAssuranceMaturityModel.Application.Common.Interfaces;
+using SoftwareAssuranceMaturityModel.Application.Actions.User;
 
 namespace SoftwareAssuranceMaturityModel.Infrastructure
 {
@@ -37,6 +38,8 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure
         {
             services.AddUserDbContext(configuration);
             services.AddApplicationDbContext(configuration);
+
+            services.AddTransient<CreateUser>();
 
             services.AddScoped<ProtectedLocalStorage>();
             services.AddScoped<ProtectedSessionStorage>();
