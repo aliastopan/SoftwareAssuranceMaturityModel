@@ -54,7 +54,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
                     _recapableResults.Add(results);
                 }
             }
-        
+
             RecapCheck();
         }
     }

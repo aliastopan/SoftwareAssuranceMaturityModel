@@ -1,0 +1,42 @@
+@page "/administrator"
+
+<h3>Tabel Survey</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sesi Survey</th>
+      <th scope="col">Tanggal Mulai</th>
+      <th scope="col">Tanggal Selesai</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>PT. ABC</td>
+      <td>10/1/2022</td>
+      <td>13/1/2022</td>
+      <td>Selesai</td>
+      <td>
+          <button class="btn btn-sm btn-info">Lihat Hasil</button>
+      </td>
+    </tr>
+      <tr>
+      <th scope="row">2</th>
+      <td>PT. XYZ</td>
+      <td>2/2/2022</td>
+      <td>5/2/2022</td>
+      <td>Berlangsung</td>
+      <td>
+          <button class="btn btn-sm btn-danger">Tutup Sesi</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<SessionForm />
