@@ -10,6 +10,12 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         int _maxQ => _recapManager.MaxQ;
         List<List<float>> _recapableResults = new();
+        // i = 1 => d1
+        // i = 2 => d2
+        // i = 3 => d3
+        // i = 4 => d4
+        // i = 5 => d5
+        // i = 6 => d6
 
         protected void RecapCheck()
         {

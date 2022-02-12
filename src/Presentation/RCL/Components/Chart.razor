@@ -1,0 +1,65 @@
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<canvas id="@Id"></canvas>
+
+@code {
+    #nullable disable
+    public enum ChartType
+    {
+        Radar
+    }
+
+    [Parameter] public string Id { get; set; }
+    [Parameter] public ChartType Type { get; set; }
+    [Parameter] public string[] Data { get; set; }
+    [Parameter] public string[] BackgroundColor { get; set; }
+    [Parameter] public string[] BorderColor { get; set; }
+    [Parameter] public string[] PointBackgroundColor { get; set; }
+    [Parameter] public string[] PointBorderColor { get; set; }
+    [Parameter] public string[] Labels { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Here we create an anonymous type with all the options
+        // that need to be sent to Chart.js
+        var config = new
+        {
+            Type = Type.ToString().ToLower(),
+            Options = new
+            {
+                Responsive = true,
+                Scales = new
+                {
+                    YAxes = new[]
+                    {
+                        new { Ticks = new {
+                            BeginAtZero = true
+                        } }
+                    }
+                },
+                Plugins = new {
+                    Legend = new {
+                        Display = false
+                    }
+                }
+            },
+            Data = new
+            {
+                Datasets = new[]
+                {
+                    new {
+                        Data = Data,
+                        BackgroundColor = BackgroundColor,
+                        BorderColor = BorderColor,
+                        PointBackgroundColor = PointBackgroundColor,
+                        PointBorderColor = PointBorderColor
+                    }
+                },
+                Labels = Labels
+            }
+        };
+
+        await JSRuntime.InvokeVoidAsync("setup", Id, config);
+    }
+}
