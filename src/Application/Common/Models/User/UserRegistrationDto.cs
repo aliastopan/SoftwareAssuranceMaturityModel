@@ -12,5 +12,15 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Models.User
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }
+
+        public Dictionary<string, int> UserRoles = Enum
+            .GetValues(typeof(UserRole))
+            .Cast<UserRole>()
+            .ToDictionary(key => key.ToString(), value => (int)value);
+
+        public Dictionary<string, int> UserFlags = Enum
+            .GetValues(typeof(UserFlag))
+            .Cast<UserFlag>()
+            .ToDictionary(key => key.ToString(), value => (int)value);
     }
 }

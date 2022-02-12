@@ -1,0 +1,59 @@
+@using SoftwareAssuranceMaturityModel.Application.Actions.User
+@using SoftwareAssuranceMaturityModel.Application.Common.Models.User
+@using SoftwareAssuranceMaturityModel.Application.Common.Helpers
+@inject CreateUser CreateUser
+@inject NavigationManager NavManager
+
+<div class="bg-light form-group shadow p-3 mb-5 bg-white rounded border" style="width: 24rem;">
+
+    <h2 class="mb-3">Sign Up</h2>
+
+    <EditForm Model="@_newUser">
+
+        <InputText
+            @bind-Value="_newUser.Username"
+            placeholder="Username"
+            class="form-control mb-2"/>
+
+        <InputText
+            type="password"
+            @bind-Value="_newUser.Password"
+            placeholder="Password"
+            class="form-control mb-2"/>
+
+        <InputText
+            type="password"
+            @bind-Value="_newUser.ConfirmPassword"
+            placeholder="Confirm Password"
+            class="form-control mb-2"/>
+
+        <InputSelect
+            @bind-Value="_newUser.Role"
+            class="form-control mb-2">
+            @foreach (var role in _newUser.UserRoles)
+            {
+                <option value="@role.Value">@role.Key</option>
+            }
+        </InputSelect>
+
+        <button
+            type="submit"
+            @onclick="@SubmitAsync"
+            class="btn btn-primary form-control mb-2">
+            Submit
+        </button>
+
+    </EditForm>
+</div>
+
+@code
+{
+    private UserRegistrationDto _newUser = new();
+
+    private async Task SubmitAsync()
+    {
+        await CreateUser.InsertAsync(_newUser);
+        NavManager.NavigateTo("/");
+    }
+
+}

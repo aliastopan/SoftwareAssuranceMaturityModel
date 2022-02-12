@@ -15,7 +15,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Actions.User
             _userDbContext = userDbContext;
         }
 
-        public async Task Insert(UserRegistrationDto userRegistration)
+        public async Task InsertAsync(UserRegistrationDto userRegistration)
         {
             var user = userRegistration.Adapt<UserEntity>();
             await _userDbContext.Users.AddAsync(user);
