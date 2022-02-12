@@ -31,6 +31,8 @@
                 Responsive = true,
                 Scales = new
                 {
+                    Min = 0,
+                    Max = 5,
                     YAxes = new[]
                     {
                         new { Ticks = new {
@@ -57,9 +59,18 @@
                     }
                 },
                 Labels = Labels
-            }
+            },
+
         };
 
         await JSRuntime.InvokeVoidAsync("setup", Id, config);
     }
 }
+
+            @* Option = new{
+                Scale = new{
+                    Ticks = new{
+                        BeginAtZero = true,
+                    }
+                }
+            } *@
