@@ -3,7 +3,8 @@ namespace SoftwareAssuranceMaturityModel.Domain.Enums
     public enum UserRole : byte
     {
         Restricted = 0,
-        Administrator = 1,
-        Developer = 2
+        Supervisor = 1,
+        Administrator = 2,
+        Developer = 99
     }
 }
