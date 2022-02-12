@@ -10,6 +10,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         int _maxQ => _recapManager.MaxQ;
         List<List<float>> _recapableResults = new();
+        List<float> _result = new();
         // i = 1 => d1
         // i = 2 => d2
         // i = 3 => d3
@@ -29,39 +30,49 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
                 int domainAvg = _recapableResults[i].Count - 1;
                 System.Console.WriteLine($"DOMAIN AVG {_recapableResults[i][domainAvg]}\n");
 
+                _result.Add(_recapableResults[i][domainAvg]);
             }
+
+            dataLiterial = CreateLiteralFromData();
+
+        }
+
+        protected override void OnInitialized()
+        {
+            System.Console.WriteLine($"Total Q: {_maxQ}");
+
+            var recapable = _recapManager.GetAveragesPerDomain();
+            var _q1 = recapable[0];
+
+
+            for (int i = 0; i < recapable.Count; i++)
+            {
+                List<float> results = new();
+                var respondsAvg = recapable[i];
+                // System.Console.WriteLine($"Domain #{i+1}");
+                for (int j = 0; j < respondsAvg.Count; j++)
+                {
+                    float avg = respondsAvg[j].Value;
+                    results.Add(avg);
+                    // System.Console.WriteLine($"Avg #{j+1}: {avg} ");
+                }
+                var qAvg = _recapManager.AvgPerDomain(i+1);
+                results.Add(qAvg);
+                // System.Console.WriteLine($"DOMAIN AVG {qAvg}\n");
+
+                _recapableResults.Add(results);
+            }
+
+            RecapCheck();
         }
 
         protected override void OnAfterRender(bool firstRender)
         {
             if(firstRender)
             {
-                System.Console.WriteLine($"Total Q: {_maxQ}");
 
-                var recapable = _recapManager.GetAveragesPerDomain();
-                var _q1 = recapable[0];
-
-
-                for (int i = 0; i < recapable.Count; i++)
-                {
-                    List<float> results = new();
-                    var respondsAvg = recapable[i];
-                    // System.Console.WriteLine($"Domain #{i+1}");
-                    for (int j = 0; j < respondsAvg.Count; j++)
-                    {
-                        float avg = respondsAvg[j].Value;
-                        results.Add(avg);
-                        // System.Console.WriteLine($"Avg #{j+1}: {avg} ");
-                    }
-                    var qAvg = _recapManager.AvgPerDomain(i+1);
-                    results.Add(qAvg);
-                    // System.Console.WriteLine($"DOMAIN AVG {qAvg}\n");
-
-                    _recapableResults.Add(results);
-                }
             }
 
-            RecapCheck();
         }
     }
 }

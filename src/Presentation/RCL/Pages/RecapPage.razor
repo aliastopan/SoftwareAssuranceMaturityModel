@@ -1,2 +1,56 @@
 @page "/recap"
 
+<div class="w-50 p-5">
+    <Chart Id="@Id" Type="@Chart.ChartType.Radar"
+        Data="@(new[] {"2.8444443", "2.65", "2.4333332", "2.8444443", "2.6933331", "2.7809525" })"
+        BackgroundColor="@(new[] { "rgba(255, 99, 132, 0.2)" })"
+        BorderColor="@(new[] { "rgb(255, 99, 132)" })"
+        PointBackgroundColor="@(new[] { "rgb(255, 99, 132)" })"
+        PointBorderColor="@(new[] { "#fff" })"
+        Labels="@(new[] { "D1", "D2", "D3", "D4", "D5", "D6" })">
+    </Chart>
+</div>
+
+@* <button @onclick="@Refresh">REFRESH</button> *@
+
+data: @dataLiterial
+
+@code
+{
+    string dataLiterial = "";
+    string Id = "radar";
+    int counter = 0;
+
+    private void Refresh()
+    {
+        Id = $"radar{counter}";
+        this.StateHasChanged();
+    }
+
+    private string CreateLiteralFromData()
+    {
+        string litOpening = "@(new[] {";
+        string litClosing = "})";
+        string liteValue = "";
+
+        for (int i = 0; i < _result.Count; i++)
+        {
+            if(i == _result.Count - 1)
+            {
+                liteValue += "\"";
+                liteValue += $"{_result[i]}";
+                liteValue += "\" ";
+            }
+            else
+            {
+                liteValue += "\"";
+                liteValue += $"{_result[i]}";
+                liteValue += "\", ";
+            }
+        }
+
+        return $"{litOpening}{liteValue}{litClosing}";
+
+    }
+
+}
