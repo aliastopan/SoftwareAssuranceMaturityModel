@@ -1,7 +1,7 @@
 using UserEntity = SoftwareAssuranceMaturityModel.Domain.Entities.User;
 using SoftwareAssuranceMaturityModel.Application.Common.Interfaces;
 using SoftwareAssuranceMaturityModel.Application.Common.Models.User;
-using SoftwareAssuranceMaturityModel.Domain.Entities;
+using SoftwareAssuranceMaturityModel.Application.Common.Helpers;
 using Mapster;
 
 namespace SoftwareAssuranceMaturityModel.Application.Actions.User
@@ -18,6 +18,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Actions.User
         public async Task InsertAsync(UserRegistrationDto userRegistration)
         {
             var user = userRegistration.Adapt<UserEntity>();
+            user.Password = Cryptograph.GetHash(user.Password!, salt: user.Id.ToString());
             await _userDbContext.Users.AddAsync(user);
             _userDbContext.SaveChanges();
         }
