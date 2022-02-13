@@ -3,18 +3,18 @@
     {
         <table class="table">
         <tr>
-            <th colspan="2">Domain @DomainName[i]</th>
+            <th colspan="2" scope="col">Domain @DomainName[i]</th>
         </tr>
         @for (int j = 0; j < RecapResult[i].Count - 1; j++)
         {
             int row = j+1;
             <tr>
-                <th>Avg #@row</th>
+                <th scope="row">Avg #@row</th>
                 <td>@RecapResult[i][j]</td>
             </tr>
         }
         <tr>
-            <th>Tingkat Kematangan @DomainName[i]</th>
+            <th scope="row">Tingkat Kematangan @DomainName[i]</th>
             <td>@RecapResult[i][RecapResult[i].Count - 1]</td>
         </tr>
         </table> 
