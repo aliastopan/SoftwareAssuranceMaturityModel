@@ -1,0 +1,40 @@
+<div class="p-1">
+    @for (int i = 0; i < RecapResult.Count; i++)
+    {
+        <table class="table">
+        <tr>
+            <th colspan="2">Domain @DomainName[i]</th>
+        </tr>
+        @for (int j = 0; j < RecapResult[i].Count - 1; j++)
+        {
+            int row = j+1;
+            <tr>
+                <th>Avg #@row</th>
+                <td>@RecapResult[i][j]</td>
+            </tr>
+        }
+        <tr>
+            <th>Tingkat Kematangan @DomainName[i]</th>
+            <td>@RecapResult[i][RecapResult[i].Count - 1]</td>
+        </tr>
+        </table> 
+        <br>
+    }
+
+</div>
+
+
+@code{
+    #nullable disable
+
+    [Parameter] public List<List<float>> RecapResult { get; set; }
+    public List<string> DomainName = new(){
+        "Komunikasi",
+        "Manfaat & Kompetensi TI",
+        "Tata Kelola",
+        "Kemitraan Bisnis Dengan TI",
+        "Ruang Lingkup & Arsitektur",
+        "Keahlian Sumber Daya Manusia"
+    };
+    private int count => RecapResult.Count;
+}

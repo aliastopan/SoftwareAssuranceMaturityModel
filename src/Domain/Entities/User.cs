@@ -7,7 +7,7 @@ namespace SoftwareAssuranceMaturityModel.Domain.Entities
         public User()
         {
             Id = Guid.NewGuid();
-            Role = UserRole.Restricted;
+            Role = UserRole.None;
             Flag = UserFlag.Unverified;
         }
 
