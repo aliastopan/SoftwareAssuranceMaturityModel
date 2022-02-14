@@ -1,3 +1,4 @@
+using System;
 using System.Security.Authentication.ExtendedProtection;
 using Microsoft.AspNetCore.Components;
 using SoftwareAssuranceMaturityModel.Application.Common.Managers;
@@ -52,11 +53,11 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
                 // System.Console.WriteLine($"Domain #{i+1}");
                 for (int j = 0; j < respondsAvg.Count; j++)
                 {
-                    float avg = respondsAvg[j].Value;
+                    float avg = (float) Math.Round(respondsAvg[j].Value, 2);
                     results.Add(avg);
                     // System.Console.WriteLine($"Avg #{j+1}: {avg} ");
                 }
-                var qAvg = _recapManager.AvgPerDomain(i+1);
+                var qAvg = (float) Math.Round(_recapManager.AvgPerDomain(i+1), 2);
                 results.Add(qAvg);
                 // System.Console.WriteLine($"DOMAIN AVG {qAvg}\n");
 
