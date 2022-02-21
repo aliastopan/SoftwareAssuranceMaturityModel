@@ -20,8 +20,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
             for (int i = 0; i < Sessions.Count; i++)
             {
-                int totalRespondent = _applicationDbContext.Batches
-                    .Where(x => x.Id == Sessions[i].Id).ToList().Count;
+                var totalRespondent = _applicationDbContext.Batches
+                    .Where(x => x.Session.Id == Sessions[i].Id).ToList().Count;
 
                 var sessionRecord = new SessionRecord(
                     Sessions[i].Id,
