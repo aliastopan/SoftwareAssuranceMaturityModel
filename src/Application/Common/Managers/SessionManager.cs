@@ -22,7 +22,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             for (int i = 0; i < Sessions.Count; i++)
             {
                 var totalRespondent = _applicationDbContext.Batches
-                    .Where(x => x.Session.Id == Sessions[i].Id && x.Session.Flag != SessionFlag.Deleted).ToList().Count;
+                    .Where(x => x.Session.Id == Sessions[i].Id).ToList().Count;
 
                 var sessionRecord = new SessionRecord(
                     Sessions[i].Id,
@@ -33,7 +33,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                     totalRespondent
                 );
 
-                SessionRecords.Add(sessionRecord);
+                if(sessionRecord.Flag != SessionFlag.Deleted)
+                    SessionRecords.Add(sessionRecord);
             }
         }
 
