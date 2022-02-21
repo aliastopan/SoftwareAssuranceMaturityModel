@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 using Mapster;
 using SoftwareAssuranceMaturityModel.Application.Common.Interfaces;
@@ -21,7 +22,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             for (int i = 0; i < Sessions.Count; i++)
             {
                 var totalRespondent = _applicationDbContext.Batches
-                    .Where(x => x.Session.Id == Sessions[i].Id).ToList().Count;
+                    .Where(x => x.Session.Id == Sessions[i].Id && x.Session.Flag != SessionFlag.Deleted).ToList().Count;
 
                 var sessionRecord = new SessionRecord(
                     Sessions[i].Id,
@@ -83,10 +84,17 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             return Sessions[sessionsIndex].Flag == SessionFlag.OnGoing;
         }
 
-        public int GetTotalRespondent(int sessionsIndex)
+        public void DeleteSession(int sessionId)
         {
-            var batches = _applicationDbContext.Batches.ToList();
-            return batches.Count;
+            var session = _applicationDbContext.Sessions
+                .FirstOrDefault(x => x.Id == sessionId);
+
+            if(session is null)
+                return;
+
+            session!.Flag = SessionFlag.Deleted;
+            _applicationDbContext.Sessions.Update(session);
+            _applicationDbContext.SaveChanges();
         }
 
 

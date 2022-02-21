@@ -4,5 +4,6 @@ namespace SoftwareAssuranceMaturityModel.Domain.Enums
     {
         OnGoing = 0,
         Done = 1,
+        Deleted = 10
     }
 }

@@ -31,9 +31,11 @@
 				}
 				else
 				{
-					var direct = $"/recap/{SessionManager.SessionRecords[i].Id}";
+					var id = SessionManager.SessionRecords[i].Id;
+					var direct = $"/recap/{id}";
 					System.Console.WriteLine($"URL: {direct}");
           			<a href="@direct" class="btn btn-sm btn-info">Lihat Hasil</a>
+          			<button @onclick="(() => DeleteSession(id))" class="btn btn-sm btn-danger" >Hapus</button>
 				}
       		</td>
     	</tr>
