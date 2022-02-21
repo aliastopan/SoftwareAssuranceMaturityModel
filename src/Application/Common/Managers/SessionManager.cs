@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SoftwareAssuranceMaturityModel.Application.Common.Interfaces;
 using SoftwareAssuranceMaturityModel.Application.Common.Helpers;
+using SoftwareAssuranceMaturityModel.Application.Common.Models.Session;
 using SoftwareAssuranceMaturityModel.Domain.Entities;
 using SoftwareAssuranceMaturityModel.Domain.Enums;
 
@@ -8,9 +9,12 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 {
     public class SessionManager
     {
+        public List<Session> Sessions { get; set; }
+
         public SessionManager(IApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
+            Sessions = _applicationDbContext.Sessions.ToList();
         }
 
         private IApplicationDbContext _applicationDbContext { get; set; }
@@ -53,6 +57,17 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 return Result.Fail<List<Session>>(ErrorMessage.NO_SESSION_FOUND);
             else
                 return Result.Ok<List<Session>>(sessions);
+        }
+
+        public bool IsSessionOnGoing(int sessionsIndex)
+        {
+            return Sessions[sessionsIndex].Flag == SessionFlag.OnGoing;
+        }
+
+        public int GetTotalRespondent(int sessionsIndex)
+        {
+            var batches = _applicationDbContext.Batches.ToList();
+            return batches.Count;
         }
 
 
