@@ -1,0 +1,24 @@
+<div>
+    <table class="table table-bordered">
+    <tr>
+        <th>Responds</th>
+        @for (int i = 0; i < _recapManager.Batches[0].Responds.Count; i++)
+        {
+            var index = i+1;
+            <th>#@index</th>
+        }
+    </tr>
+    @for (int i = 0; i < _recapManager.Batches.Count; i++)
+    {
+        int row = i+1;
+        <tr>
+            <td>#@row</td>
+            @for (int j = 0; j < _recapManager.Batches[i].Responds.Count; j++)
+            {
+                var respond = _recapManager.Batches[i].Responds[j].Value;
+                <th>@respond</th>
+            }
+        </tr>
+    }
+    </table>
+</div>

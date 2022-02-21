@@ -115,13 +115,16 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             }
             return (float) avg/responds.Count;
         }
-
-
         public int QPerDomainCount(int qDomain)
         {
             return Averages
                 .Where(v => v.QDomain == qDomain)
                 .ToList().Count;
+        }
+
+        public void RespondsPerBatch(int sessionId)
+        {
+            var singleSession = _applicationDbContext.Batches.ToList();
         }
     }
 }
