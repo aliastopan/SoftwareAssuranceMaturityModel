@@ -13,9 +13,12 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
         public RecapManager(IApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
+        }
 
+        public void BeganRecap(int sessionId)
+        {
             Batches = _applicationDbContext.Batches
-                .Where(x => x.Session.Id == 1)
+                .Where(x => x.Session.Id == sessionId)
                 .ToList();
 
             System.Console.WriteLine($"Batches: {Batches.Count}");

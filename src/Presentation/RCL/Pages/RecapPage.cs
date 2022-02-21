@@ -8,6 +8,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
     public partial class RecapPage
     {
         [Inject] private RecapManager _recapManager { get; set; } = default!;
+        [Parameter] public int SessionId { get; set; }
 
         int _maxQ => _recapManager.MaxQ;
         List<List<float>> _recapableResults = new();
@@ -40,6 +41,8 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         protected override void OnInitialized()
         {
+            _recapManager.BeganRecap(SessionId);
+
             System.Console.WriteLine($"Total Q: {_maxQ}");
 
             var recapable = _recapManager.GetAveragesPerDomain();
