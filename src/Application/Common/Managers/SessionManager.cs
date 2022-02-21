@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Mapster;
 using SoftwareAssuranceMaturityModel.Application.Common.Interfaces;
 using SoftwareAssuranceMaturityModel.Application.Common.Helpers;
 using SoftwareAssuranceMaturityModel.Application.Common.Models.Session;
@@ -10,11 +11,29 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
     public class SessionManager
     {
         public List<Session> Sessions { get; set; }
+        public List<SessionRecord> SessionRecords { get; set; } = new();
 
         public SessionManager(IApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
             Sessions = _applicationDbContext.Sessions.ToList();
+
+            for (int i = 0; i < Sessions.Count; i++)
+            {
+                int totalRespondent = _applicationDbContext.Batches
+                    .Where(x => x.Id == Sessions[i].Id).ToList().Count;
+
+                var sessionRecord = new SessionRecord(
+                    Sessions[i].Id,
+                    Sessions[i].Name,
+                    Sessions[i].StartDate,
+                    Sessions[i].EndDate,
+                    Sessions[i].Flag,
+                    totalRespondent
+                );
+
+                SessionRecords.Add(sessionRecord);
+            }
         }
 
         private IApplicationDbContext _applicationDbContext { get; set; }

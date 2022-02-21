@@ -14,22 +14,23 @@
     </tr>
   </thead>
   <tbody>
-    @for (int i = 0; i < SessionManager.Sessions.Count; i++)
+    @for (int i = 0; i < SessionManager.SessionRecords.Count; i++)
     {
     	<tr>
       		<th scope="row">@i</th>
-      		<td>@SessionManager.Sessions[i].Name</td>
-      		<td>@SessionManager.Sessions[i].StartDate</td>
-      		<td>@SessionManager.Sessions[i].EndDate</td>
-      		<td>@SessionManager.Sessions[i].Flag.ToString()</td>
+      		<td>@SessionManager.SessionRecords[i].Name</td>
+      		<td>@SessionManager.SessionRecords[i].StartDate</td>
+      		<td>@SessionManager.SessionRecords[i].EndDate</td>
+      		<td>@SessionManager.SessionRecords[i].Flag.ToString()</td>
       		<td>
 				@if(SessionManager.IsSessionOnGoing(i))
 				{
-          			<button class="btn btn-sm btn-info" disabled>Lihat Hasil</button>
+          			<button class="btn btn-sm btn-light" disabled>Lihat Hasil</button>
 				}
 				else
 				{
-					var direct = $"/recap/{i}";
+					var direct = $"/recap/{SessionManager.SessionRecords[i].Id}";
+					System.Console.WriteLine($"URL: {direct}");
           			<a href="@direct" class="btn btn-sm btn-info">Lihat Hasil</a>
 				}
       		</td>
