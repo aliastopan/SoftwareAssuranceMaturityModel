@@ -15,6 +15,17 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             _applicationDbContext = applicationDbContext;
         }
 
+        public Result GetSession(int sessionId)
+        {
+            var batch = _applicationDbContext.Batches
+                .FirstOrDefault(search => search.Session.Id == sessionId);
+
+            if(batch is null)
+                return Result.Fail("SESSION NOT FOUND");
+            else
+                return Result.Ok();
+        }
+
         public void BeganRecap(int sessionId)
         {
             Batches = _applicationDbContext.Batches

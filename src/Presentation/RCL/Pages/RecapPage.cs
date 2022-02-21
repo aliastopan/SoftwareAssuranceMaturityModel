@@ -7,6 +7,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 {
     public partial class RecapPage
     {
+        [Inject] private NavigationManager _navManager { get; set; } = default!;
         [Inject] private RecapManager _recapManager { get; set; } = default!;
         [Parameter] public int SessionId { get; set; }
 
@@ -41,6 +42,13 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
 
         protected override void OnInitialized()
         {
+            var result = _recapManager.GetSession(SessionId);
+            if(result.Failure)
+            {
+                _navManager.NavigateTo("/session-not-found");
+            }
+
+
             _recapManager.BeganRecap(SessionId);
 
             System.Console.WriteLine($"Total Q: {_maxQ}");
