@@ -45,6 +45,16 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 return Result.Ok<Session>(result);
         }
 
+        public Result<List<Session>> GetAllSession()
+        {
+            var sessions = _applicationDbContext.Sessions.ToList();
+
+            if(sessions is null)
+                return Result.Fail<List<Session>>(ErrorMessage.NO_SESSION_FOUND);
+            else
+                return Result.Ok<List<Session>>(sessions);
+        }
+
 
     }
 }
