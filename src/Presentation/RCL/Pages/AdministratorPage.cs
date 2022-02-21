@@ -13,7 +13,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
         {
             SessionManager.DeleteSession(sessionId);
             StateHasChanged();
-            NavigationManager.NavigateTo("/administrator");
+            NavigationManager.NavigateTo("/administrator", forceLoad: true);
         }
     }
 }
