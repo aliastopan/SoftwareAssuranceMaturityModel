@@ -2,13 +2,18 @@
 @inject QuestionnaireManager QManager
 
 <div>
+    <span>Statment</span>
+    <br>
     <textarea rows="2" cols="80"
         @bind="QManager.EditableQ.Statement"
         @bind:event="oninput" />
-
+    
+    <br>
+    <span>Responds</span>
+    <br>
     @for (int i = 0; i < QManager.EditableQ.Responds.Count; i++)
     {
-        <textarea rows="2" cols="80"
+        <textarea rows="1" cols="80"
         @bind="QManager.EditableQ.Responds[i]"
         @bind:event="oninput" />
     }
