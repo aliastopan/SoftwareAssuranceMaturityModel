@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 using SoftwareAssuranceMaturityModel.Domain.Entities;
 using SoftwareAssuranceMaturityModel.Domain.Enums;
 using SoftwareAssuranceMaturityModel.Application.Common.Helpers;
@@ -74,10 +75,17 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
 
         private IApplicationDbContext _applicationDbContext;
+        private IHostingEnvironment _env;
 
-        public SurveyManager(IApplicationDbContext  applicationDbContext)
+        public SurveyManager(IApplicationDbContext  applicationDbContext, IHostingEnvironment env)
         {
             _applicationDbContext = applicationDbContext;
+            _env = env;
+
+            string wwwroot = $"{env.WebRootPath}\\.datastorage\\survey.json";
+            // string rootsource = Marshal.GetDataStorage("survey.json", ".");
+            // System.Console.WriteLine($"ROOT SOURCE: {wwwroot}");
+
 
             string source = Marshal.GetDataStorage("survey.json", @"..\..\..\");
             using (StreamReader reader = new StreamReader(source))
@@ -96,7 +104,7 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             for (int i = 0; i < Questionnaires.Count; i++)
                 Responds.Add(new());
 
-            Recap();
+            // Recap();
 
         }
         public List<Questionnaire> Questionnaires { get; set; } = new();

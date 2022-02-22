@@ -1,0 +1,468 @@
+[
+  {
+    "Id": 1,
+    "Domain": "D1",
+    "Statement": "Apakah saat ini devisi IT sebagai pusat data dan pengelolaan Teknologi Informasi (TI) sudah memahami strategi dan tujuan  organisasi?",
+    "Responds": [
+      "Pengelola TI tidak memahami strategi dan tujuan TI",
+      "Pengelola TI hanya mengetahui sedikit/sebagian dari strategi/tujuan bisnis organisasi",
+      "Pengelola TI mengetahui dengan baik strategi dan tujuan bisnis organisasi",
+      "Pangelola TI mengetahui dengan baik dan mendorong seluruh staf TI untuk mengerti strategi dan tujuan bisnis organisasi",
+      "Pengertian mengenai strategi dan tujuan bisnis organisasi menjadi suatu keharusan"
+    ]
+  },
+  {
+    "Id": 2,
+    "Domain": "D1",
+    "Statement": "Bagaimana pemahaman pimpinan sebagai pengelola organisasi mengerti dan memahami lingkup kegiatan TI di PT. ABC?",
+    "Responds": [
+      "Pengelola organisasi tidak memahami TI sama sekali",
+      "Pengelola organisasi memahami TI secara terbatas",
+      "Pengelola organisasi memahami TI dengan baik",
+      "Pengelola organisasi mengerti dan memahami TI dengan baik, serta menyadari bahwa TI merupakan hal yang sangat potensial untuk menunjang kegiatan di Kominfo",
+      "Pengelola organisasi mengerti dan memahami Tl dengan sangat baik dan menyadari bahwa hal ini merupakan suatu keharusan"
+    ]
+  },
+  {
+    "Id": 3,
+    "Domain": "D1",
+    "Statement": "Mana pernyataan berikut yang paling cocok menggambarkan metode (mencakup penggunan intranet, portal, milis, e-mail, e-office, rapat, pelatihan, dsb) yang paling sering diselenggarakan di organisasi dalam rangka aktivitas pembelajaran dalam lingkup organisasi (kolaborasi bisnis dan TI) di lingkungan perusahaan (mencakup aspek berbagi pengalaman, pemecahan masalah, diskusi objektif dan faktor-faktor vital pendukung kesuksesan/CSF)?",
+    "Responds": [
+      "Casual, ad-hoc (hanya ada pada saat tertentu ketika ada kebutuhan dan bersifat terbatas seperti observasi pegawai, berbagi cerita, pree meeting, dsb)",
+      "Regular dan jelas, melalui rapat-rapat pada setiap unit kerja",
+      "Secara formal dan didukung oleh pimpinan",
+      "Formal, terpadu dengan dukungan pimpinan senior dan menengah, adanya monitoring dan umpan balik dalam rangka pengukuran dan evaluasi untuk hasil yang efektif"
+    ]
+  },
+  {
+    "Id": 4,
+    "Domain": "D1",
+    "Statement": "Seperti apa kecenderungan prosedur/mekanisme komunikasi yang terjadi antara bisnis dengan TI di organisasi?",
+    "Responds": [
+      "Satu arah dari bisnis ke TI, formal dan tidak fleksibel (command and control)",
+      "Satu arah dari bisnis ke TI, semi formal dan sedikit fleksibel",
+      "Dua arah antara bisnis dengan TI, formal dan tidak fleksibel",
+      "Dua arah antara bisnis dengan TI, semi formal dan sedikit fleksibel",
+      "Dua arah, informal dan fleksibel"
+    ]
+  },
+  {
+    "Id": 5,
+    "Domain": "D1",
+    "Statement": "Sampai sejauh mana proses berbagi pengetahuan (knowledge sharing) antara bisnis dengan TI terjadi di organisasi?",
+    "Responds": [
+      "Proses berbagi pengetahuan terjadi secara ad hoc (berdasarkan kebutuhan, kondisi tertentu)",
+      "Proses berbagi pengetahuan bersifat semi terstruktur (struktur baru mulai dibuat)",
+      "Proses berbagi pengetahuan sudah terstruktur dan formal, namun terbatas hanya melibatkan level unit fungsional kunci",
+      "Proses berbagi pengetahuan sudah terinstitusi (melibatkan level unit fungsional dengan organisasi)",
+      "Proses berbagi pengetahuan sudah terinstitusi (melibatkan level unit fungsional dengan organisasi dan mitra luar)"
+    ]
+  },
+  {
+    "Id": 6,
+    "Domain": "D1",
+    "Statement": "Seberapa efektif keberadaan peran penghubung (liaisons) pihak bisnis dan TI dalam menjembatani komunikasi antara pihak pengelola TI dan pengelola bisnis di organisasi?",
+    "Responds": [
+      "Tidak ada penghubung. Kalaupun ada, sifatnya ad-hoc (hanya berdasarkan kebutuhan, kondisi tertentu)",
+      "Peran penghubung bersifat terbatas (hanya untuk menjembatani proses transfer pengetahuan antara bisnis dengan TI, tidak memfasilitasi untuk membangun komunikasi yang mengarahkan pada hubungan relasi bisnis dan TI yang lebih baik)",
+      "Penghubung atau orang tengah secara regular berperan tidak hanya untuk menjembatani proses transfer pengetahuan antara bisnis dengan TI, namun juga memfasilitasi komunikasi yang mengarahkan pada hubungan relasi bisnis dan TI yang lebih baik",
+      "Penghubung atau orang tengah secara regular berperan untuk menjembatani proses transfer pengetahuan antara bisnis dengan TI. Tugas utamanya adalah untuk memfasilitasi komunikasi internal yang mengarahkan pada hubungan relasi bisnis dan TI yang lebih baik",
+      "Penghubung atau orang tengah regular berperan untuk secara menjembatani proses transfer pengetahuan antara bisnis dengan TI (termasuk mitra luar). Tugas utamanya adalah untuk memfasilitasi komunikas? internal yang mengarahkan pada hubungan relasi bisnis dan TI yang lebih baik (mencakup mitra luar)"
+    ]
+  },
+  {
+    "Id": 7,
+    "Domain": "D2",
+    "Statement": "Sejauh mana aktivitas pengukuran terhadap manfaat atau kontribusi layanan TI terhadap bisnis dilakukan di Perusahaan?",
+    "Responds": [
+      "Pengukuran manfaat TI hanya sebatas pada faktor teknis (cth: system availability, respanse time) yang tidak ada hubungannya dengan bisnis",
+      "Pengukuran manfaat TI mencakup aspek teknis dan aspek efisiensi biaya/penghematan. Tidak ada proses umpan balik yang bersifat dalam rangka evaluasi dan penindaklanjutan hasil pengukuran",
+      "Pengukuran manfaat TI secara formal yang mencangkup aspek teknis dan aspek efisiensi biaya dengan menggunakan pendekatan financial tradisional. Feedback yang bersifat formal terhadap hasil pengukuran mulai ada",
+      "Pengukuran manfaat TI secara formal yang mencangkup aspek teknis, aspek efisiensi biaya dan aspek efektivitas biaya dengan menggunakan pendekatan financial tradisional. Ada feedback dan peninjauan seearaat formal terhadap hasil pengukuran",
+      "Pengukuran manfaat TI sudah multidimensi yang mencangkup aspek teknis, keuangan, operasional dan sumber daya manusia, Ada feedback dan peninjauan yang bersifat formal terhadap has?l pengukuran. Lingkup pengukuran manfaat juga mencangkup entitas luar organisasi (vendor, outsourcer, customer)"
+    ]
+  },
+  {
+    "Id": 8,
+    "Domain": "D2",
+    "Statement": "Apa yang menjadi landasan bagi unit organisasi dalam menentukan keputusan investasi TI di PT. ABC?",
+    "Responds": [
+      "Pengukuran kinerja organiasi bersifat tidak pasti dan tidak memperhitungkan manfaat TI",
+      "Pengukuran kinerja organisasi hanya sebatas pada fungsi organisasi yang dicapai",
+      "Pengukuran kinerja organisasi hanya berdasarkan pencapaian realisasi keuangan",
+      "Pengukuran kinerja organisasi selain berdasarkan pencapaian realisasi keuangan juga memperhatikan kepuasan masyarakat",
+      "Pengukuran kinerja organisasi hanya berdasarkan pencapaian realisasi keuangan, kepuasan masyarakat dan memperhatikan aspek kepuasan mitra kerja"
+    ]
+  },
+  {
+    "Id": 9,
+    "Domain": "D2",
+    "Statement": "Bagaimana keterkaitan antara pengukuran manfaat TI dengan pengukuran kinerja PT. ABC (dalam rangka mengukur kontribusi TI terhadap organisasi)? ",
+    "Responds": [
+      "Tidak ada pengukuran terhadap manfaat investasi bisnis dan TI, kalaupun ada bersifat ad-hoc (hanya saat ada kebutlan/kondisi tertentu)",
+      "Pengukuran manfaat investasi TI dan kinerja tidak berhubungan",
+      "Pengukuran manfaat investasi TI dan kinerja bisnis mulai saling terhubung dan diformalkan. Proses umpan bal?k yarg bersifat formal dan peninjauan ulang mulai ada",
+      "Pengukuran manfaat investasi TI dan kinerja bisnis sudah terhubung secara formal. Proses feedback dan peninjauan ulang secara formal sudah digunakan dalam rangka evaluasi terhadap hasil pengukuran",
+      "Pengukuran manfaat investasi TI dan kinerja bisnis sudah multi di sisi keuangan, operasional, dan sumber daya mausia hingga mencangkup entitas luar organisasi (vendor, outsourcer, stakeholder). Proses feedback yang bersifat formal digunakan dalam rangka evaluasi terhadap hasil pengukuran"
+    ]
+  },
+  {
+    "Id": 10,
+    "Domain": "D2",
+    "Statement": "Bagamana menurut  Anda tingkat dari layanan dan kinerja TI yang diberikan saat ini?",
+    "Responds": [
+      "Layanan diberikan secara sporadis",
+      "Layanan berorientasi teknis (waktu respon lama downtime, dan sebagainya) atara TI dan unit fungsional organisasi",
+      "Berorientasi teknis maupun berorientasi hubungan (kepuasan user, komitmen TI terhadap bisnis, dan sehagainya) antara TI dan unit fungsional orgnisasi serta nilai muncul di keseluruhan organisasi",
+      "Berorientas? teknis maupun berorientasi hubungan antara TI dan unit fungsional organisisi serta dalam keseluruhan organisasi",
+      "Berorientasi teknis maupun berorientasi hubungan antara TI dan unit fungsional organisasi serta dalam keseluruhan organisasi maupun mitra/aliansi eksternal kami"
+    ]
+  },
+  {
+    "Id": 11,
+    "Domain": "D2",
+    "Statement": "Sejauh mana Service Level Agreement (SLA) yang berfungsi sebagai kesepakatan tingkat kualitas layanan minimum antara penyedia layanan dengan pengguna  layanan antara bisnis dengan TI digunakan di PT. ABC ? ",
+    "Responds": [
+      "Tidak ada SLA, atau kalaupun ada sifatnya sporadis",
+      "SLA ada, diterapkan antara unit TI dengan unit fungsional tertentu dan bersifat teknis",
+      "SLA ada, diterapkan antara unit TI dengan unit fungsional tertentu, dan bersifat baik teknis maupu non-teknis (relationship-oriented seperti kepuasan pengguna (user), dsb)",
+      "SLA ada, diterapkan seluruh orginisasi, dan bersifat baik teknis maupun non-teknis",
+      "SLA ada, diterapkan seluruh organisasi termasuk rekan bisnis eksternal, dan bersifat baik teknis maupun non-teknis"
+    ]
+  },
+  {
+    "Id": 12,
+    "Domain": "D2",
+    "Statement": "Sejauh mana praktik benchmarking atau pembanding pada pengelolaan TI di PT. ABC terhadap pengelolaan TI di instansi lain?",
+    "Responds": [
+      "Benchmark jarang atau tidak pernah dilakukan, baik formal maupun informal",
+      "Benchmark sudah dilakukan secara formal dan berkala. Terkadang ada tindak lanjut terhadap hasil benchmark",
+      "Benchmark sudah dilakukan secara formal dan rutin, Biasanya ada tindak lanjut terhadap hasil benchmark",
+      "Benchmark sudah dilakukan secara formal dan rutin. Ada proses yang ter- regulasi dalam rangka tindak lanjut dan pengukuran terhadap perubahan"
+    ]
+  },
+  {
+    "Id": 13,
+    "Domain": "D2",
+    "Statement": "Sejauh mana aktivitas penilaian dan evaluas? tarhadap investasi TI dilakukan di PT. ABC?",
+    "Responds": [
+      "Tidak ada proses penilaian  dan evaluasi formal yang dilakukan",
+      "Proses penilaian dan evaluasi baru dilakukan setelah ditemukan adanya masalah pada bisnis atau TI (mis :  kegagalan proyek TI, pangsa pasar yang menurun)",
+      "Proses penilaian dan evaluasi mulai menjadi aktivitas rutin",
+      "Proses penilain dan evaluasi dilikukan secara rutin, tersedia proses formal untuk melakukan perubahan terkait hasil penilaian dan evaluasi",
+      "Proses penilaian dan evulasi dilakukun secara rutin, tersedia proses formal untuk melakukan perubahan terkait  hasil penilaian dan evaluasi serta proses pengukuran terhadap perubahan yang sudah dilakukan. Mitra luar juga dilibatkan dalam proses"
+    ]
+  },
+  {
+    "Id": 14,
+    "Domain": "D2",
+    "Statement": "Sejauh mana aktivitas dalam rangka perbaikan yang berkesinambungan (continuous improvement) diterapkan di instansi?",
+    "Responds": [
+      "Tidak ada aktivitas perbaikan yang berkesinambungan",
+      "Sudah ada beberapa aktivitas perbaikan yang berkesinambungan, tetapi belum ada pengukuran terhadap efektivitasnya",
+      "Sudah ada beberapa aktivitas perbaikan yang berkesinambungan, proses pengukuran efektivitasnya mulai diperkenalkan",
+      "Sudah ada cukup banyak aktivitas perbaikan yang berkesinambungan dan secara berkala dilakukan pengukuran terhadap efektivitasnya",
+      "Aktivitas perbaikan yang berkesinambungan sudah mejadi rutinitas dan selalu dilakukan pengukuran terhadap efektivitasnya"
+    ]
+  },
+  {
+    "Id": 15,
+    "Domain": "D3",
+    "Statement": "Sejauh mana perencanan strategi bisnis dengan partisipasi TI dibuat dan dikelola dalam lingkup PT. ABC?",
+    "Responds": [
+      "Tidak ada perencanaan strategi bisnis yang basifat formal atau kalaupun ada pembuatan dan pengelolannya bersifat ad-hoc (sebatas kebutuhan dan kondisi tertentu saja)",
+      "Perencanaan strategis TI dibuat secara formal di level unit fungsional dengan sedikit melibatkan partisipasi bisnis",
+      "Perencanaan srategis TI dibuat secara formal di level unit fungsional dengan beberapa keterlibatan dari bisnis",
+      "Perencanaan strategis TI dibuat secara fomal di level unit fungsional dan unit-unit pendukung lainnya dengan melibatkan partisipas? TI",
+      "Perencanaan strategis bisnis dibuat secara formal di level unit fungsional, unit-unit pendukung lainnya dan mitra luar dengan melibatkan partisipasi TI"
+    ]
+  },
+  {
+    "Id": 16,
+    "Domain": "D3",
+    "Statement": "Bagaimana keterkaitan perencanaan strategi TI dengan partisipasi bisnis saat ini ?",
+    "Responds": [
+      "PT. ABC tidak melakukan perencanaan strategis TI formal, Jikapun dilakukan, hanya ketika diperlukan",
+      "PT. ABC melakukan perencanaan strategis TI formal pada tingkat unit fungsional dengan sedikit partisipasi bisnis",
+      "PT. ABC melakukan perencanaan strategis TI formal pada tingkat unit fungsional dan tingkat organisasi dengan beberapa partisipasi bisnis. Terdapat pula perencanaan antar organisasi",
+      "PT. ABC melakukan perencanaan strategis TI formal pada tingkat unit fungsional dan tingkat organisasi dengan partisipasi bisnis",
+      "PT. ABC melakukan perencanaan strategis TI formal pada tingkat unit fungsional dan tingkat organisasi, serta dengan mitra/stakeholder PT. ABC"
+    ]
+  },
+  {
+    "Id": 17,
+    "Domain": "D3",
+    "Statement": "Bagaimana mode dari struktur  dari unit TI dan proses pelaporan TI ke bisnis yang berlaku di PT. ABC ?   **Keterangan  : *(Sentralisasi adalah model dimana unit TI atau unit lainnya yang ditunjuk, memiliki otoritas keputusan terkait arsitektur, standar pembuatan keputusan sumber daya aplikasi.) **(Desentralisasi adalah model dimana setiap unit-unit fungsional (unit bisnis) memiliki otoritas sendiri untuk menentukan arsitektur, standar dan pembuatan keputusan sumber daya aplikasi.) ***(Co-location adalah praktek penempatan beberapa unit yang saling berkaitan dalam satu ruang/tempat yang sama.) **(Federasi adalah model dimana unit TI atau unit lainnya yang ditunjuk memiliki wewenang dalam menentukan arsitektur, sistem secara standar. Sementara setiap unit-unit fungsional (unit umum memiliki otoritas dalam menentukan sumber daya aplikasi.)",
+    "Responds": [
+      "Sentralisasi* atau desentralisasi**, CIO melapor kepada CFO",
+      "Sentralisasi atau desentralisasi , ada co-location***, CIO melapor ke CFO",
+      "Sentralisasi atau desentralisasi , ada co-location***, CIO melapor ke COO",
+      "Federasi, CIO melapor ke COO atau CEO",
+      "Federasi, CIO melapor ke CEO"
+    ]
+  },
+  {
+    "Id": 18,
+    "Domain": "D3",
+    "Statement": "Bagaimana bisnis melihat TI terkait dengan aktivitas pengelolaan anggaran TI di PT. ABC ?",
+    "Responds": [
+      "Cost center, dengan pengeluaran yang tidak menentu",
+      "Cost center, dengan manfaat hanya sebatas untuk area fungsional tertentu",
+      "Cost center, dimana beberapa inisiatif proyek TI sudah dipandang sebagai bentuk investasi",
+      "Investment center",
+      "Investment center dan profit center"
+    ]
+  },
+  {
+    "Id": 19,
+    "Domain": "D3",
+    "Statement": "Apa yang menjadi landasan bagi unit organisasi dalam menentukan keputusan investasi TI di PT. ABC?",
+    "Responds": [
+      "Penghematan/pengurangan biaya",
+      "Fokus pada peningkatan produktivitas dan efisiensi-efisiensi cost center, dengan manfaat hanya sebatas untuk area fungsional tertentu",
+      "Evaluasi dengan pendekatan finansial tradisional, TI dilihat sebagai pemicu proses",
+      "Fokus pada efektivitas bisnis, TI dilihat sebagai pengarah bisnis atau pemicu dari realisasi strategi bisnis",
+      "Menciptakan keunggulan kompetitif dan meningkatkan pendapatan. Mitra luar organisasi melihat manfaatnya"
+    ]
+  },
+  {
+    "Id": 20,
+    "Domain": "D3",
+    "Statement": "Sejauh mana keberadaan dan peran dari komite pengarah TI (IT steering committee) yang melibatkan partisipasi dari manajemen TI level senior dan manajemen bisnis di PT. ABC ?",
+    "Responds": [
+      "Tidak ada komite pengarah yang bersifat formal dan regular",
+      "Ada komite pengarah yang bertemu secara informal berdasarkan kebutuhan",
+      "Ada komite pengarah formal yang bertemu secara regular dan mulai terbangun efektivitas",
+      "Ada komite pengarah formal yang bertemu secara regular dan sudah memeperlihatkan efektivitas",
+      "Ada komite pengarah formal yang bertemu secara regular dan sudah memperlihatkan efektivitas. Melibatkan mitra bisnis strategis untuk saling bertukar pendapat dalam pembuatan kebijakan"
+    ]
+  },
+  {
+    "Id": 21,
+    "Domain": "D3",
+    "Statement": "Bagaimana proses penentuan prioritas terhadap proyek/inisiatif TI dilakukan di PT.ABC (mengacu pada kebutuhan bisnis)?",
+    "Responds": [
+      "Keputusan atau prioritas dari inisiatif TI dibuat secara reaktif berdasarkan kebutuhan bisnis atau TI",
+      "Ada komite pengarah yang bertemu secara informal berdasarkan kebutuhan, prioritas ditentukan oleh fungsional TI, penentuan prioritas sudah mulai bersifat responsive terhadap kebutuhan bisnis",
+      "Prioritas ditentukan oleh fungsional bisnis dan bersifat responsif terhadap kebutuhan bisnis",
+      "Prioritas ditentukan bersama (TI dan bisnis), melibatkan manajemen TI level menengah dan manajemen bisnis",
+      "Prioritas ditentukan bersama, melibatkan menejemen TI level menengah dan menejemen bisnis. Penentuan prioritas juga mempertimbangkan prioritas dan mitra bisnis"
+    ]
+  },
+  {
+    "Id": 22,
+    "Domain": "D4",
+    "Statement": "Seperti apa pandangan bisnis (persepsi bisnis) terhadap TI di PT. ABC?",
+    "Responds": [
+      "TI dilihat sebagai pengeluaran bagi organisasi",
+      "TI mulai dilihat sebagai aset bagi organisasi",
+      "TI sebagai aset organisasi (sebagai pemicu yang fundamental bagi aktivitas bisnis jangka panjang)",
+      "TI sebagai asset organisasi (sebagai penggerak/pedorong/pengarah yang fundamental bagi aktivitas organisasi jangka panjang)",
+      "TI sebagai mitra bagi organisasi dalam rangka menciptakan manfaat bagi organisasi"
+    ]
+  },
+  {
+    "Id": 23,
+    "Domain": "D4",
+    "Statement": "Sejauh mana TI diberikan peran dalam perencanaan strategi bisnis di PT. ABC?",
+    "Responds": [
+      "TI tidak mendapat tempat/peran di organisasi",
+      "TI sebagai pemicu proses organisasi",
+      "TI sebagai pendorong / pengarah proses organisasi",
+      "TI sebagai pemicu dan pendorong strategi organisasi",
+      "TI sebagai mitra organisasi dalam rangka memicu dan mendorong kepada realisasi objektif strategi"
+    ]
+  },
+  {
+    "Id": 24,
+    "Domain": "D4",
+    "Statement": "Bagaimana sasaran/tujuan, resiko dan ganjaran (reward/pinalti) dibagi antara organisasi dengan TI terkait dengan inisiatif-inisiatif (proyek) TI di PT. ABC (mis : ketika suatu proyek TI terlambat atau melebihi anggaran karena adanya perubahan permintaan dari organisasi)?",
+    "Responds": [
+      "TI menanggung segala resiko namun tidak mendapat bagian dari bonus/insentif",
+      "TI menanggung sebagian besar resiko dengan sedikit bonus/insentif",
+      "Ada toleransi risiko antara TI dengan organisasi, TI mulai mendapat bagian dari bonus/insentif yang lebih berimbang dengan bisnis",
+      "Risiko dan bonus/insentif selalu dibagi rata antara TI dengan organisasi",
+      "Risiko dan bonus/insentif selalu dibagi rata antara TI dengan organisasi. Ada sistem kompensasi khusus yang bersifat formal untuk menstimulus manajer untuk ikut serta atau mengambil resiko"
+    ]
+  },
+  {
+    "Id": 25,
+    "Domain": "D4",
+    "Statement": "Pilihlah pernyataan yang paling cocok yang menggambarkan pengelolaan formal hubungan antara TI dan bisnis saat ini. Sejauh mana ada proses formal yang berfokus pada peningkatan hubungan kemitraan antara TI dan bisnis (misalnya, tim lintas fungsional, pelatihan, pembagian resiko/penghargaan)?",
+    "Responds": [
+      "PT. ABC tidak mengelola hubungan kemitraan kami",
+      "PT. ABC mengelola hubungan kemitraan kami secara ad-hoc",
+      "PT. ABC telah mendefinisikan program untuk mengelola hubungan kemitraan, namun baik TI maupun bisnis tidak selalu menaatinya. Konflik yang terjadi tidak dianggap sebagai gangguan",
+      "PT. ABC telah mendefinisikan program untuk mengelola hubungan kemitraan, baik TI maupun bisnis telah menaatinya",
+      "PT. ABC telah mendefinisikan program untuk mengelola hubungan kemitraan, baik TI maupun bisnis telah menaatinya dan kami selalu melakukan pengembangan yang berkelanjutan"
+    ]
+  },
+  {
+    "Id": 26,
+    "Domain": "D4",
+    "Statement": "Sejauh mana kualitas relasi dan kepercayaan yang terbina antara organisasi dengan TI di PT. ABC?",
+    "Responds": [
+      "Ada konfik, ketidakpercayaan antara bisnis dan TI",
+      "Relasi antara bisnis dan TI bersifat transaksional",
+      "TI mulai dilihat sebagai penyedia layanan organisasi yang bernilai",
+      "Relasi antara organisasi dan TI berfokus pada hubungan jangka panjang",
+      "Relasi antara organisasi dan TI bersifat hubungan jangka panjang dan TI dilihat sebagai penyedia layanan yang bernilai"
+    ]
+  },
+  {
+    "Id": 27,
+    "Domain": "D4",
+    "Statement": "Sejauh mana keterlibatan dan peran dari sponsor organisasi terkait proyek atau inisiatif TI di PT. ABC?",
+    "Responds": [
+      "Proyek TI tidak memiliki sponsor/dukungan",
+      "Proyek TI hanya didukung oleh pihak pimpinan pengelola TI",
+      "Proyek TI didukung dari pihak pimpinan pengelola TI dan pihak unit fungsional bisnis tertentu",
+      "Proyek TI didukung dari pihak pimpinan pengelola TI dan pihak unit bisnis pada level korporat/eselon I",
+      "Proyek TI didukung dari pihak pimpinan pengelola TI dan eksekutif- organisasi /eselon I"
+    ]
+  },
+  {
+    "Id": 28,
+    "Domain": "D5",
+    "Statement": "Pernyataan yang paling cocok yang menggambarkan ruang lingkup dari sistem TI (primary system) di PT. ABC saat ini?",
+    "Responds": [
+      "Sistem utama bersifat mendukung kegiatan perkantoran tradisional ( mis : e-office, email, keuangan)",
+      "Sistem utama menjalankan fungsi-fungsi yang berorientasi pada transaksi (mis : dukungan back office)",
+      "Sistem utama menjalankan fungsi-fungsi dengan ruang lingkup yang lebih luas (TI berperan sebagai pendukung terjadinya perubahan pada proses bisnis)",
+      "Sistem utama berfungsi untuk mendefinisikan ulang ruang lingkup (sebagai pendorong proses bisnis, dimana TI berperan sebagai katalis terjadinya perubahan pada proses bisnis)",
+      "Sistem utama mengaktifkan atau mendorong strategi bisnis (TI sebagai pemicu adanya perubahan strategi bisnis)"
+    ]
+  },
+  {
+    "Id": 29,
+    "Domain": "D5",
+    "Statement": "Sejauh mana kepatuhan terhadap standar TI diberlakukan pada organisasi",
+    "Responds": [
+      "Tidak ada standar TI atau tidak ada kewajiban yang mendorong kepada kepatuhan",
+      "Standar sudah didefinisikan dan diwajibkan pada level unit fungsional, tetapi tidak lintas unit fungsional",
+      "Standar sudah didefinisikan dan diwajibkan pada level unit fungsional, mulai ada koordinasi yang melibatkan lintas unit fungsional",
+      "Standar sudah didefinisikan dan diwajibkan bagi seluruh unit fungsional",
+      "Standar sudah didefinisikan dan diwajibkan bagi seluruh unit fungsional. Ada koordinasi bersama dengan mitra bisnis strategis"
+    ]
+  },
+  {
+    "Id": 30,
+    "Domain": "D5",
+    "Statement": "Sampai sejauh mana tingkat integrasi arsitektur dari komponen-komponen infrastruktur TI (aspek organisasional dan aspek teknologi) berlaku di PT. ABC?",
+    "Responds": [
+      "Belum terintegrasi dengan baik/ tidak ada integrasi",
+      "Terintegrasi pada unit fungsional dan mulai coba untuk diintegrasikan dengan unit fungsional lainnya (lintas satuan kerja)",
+      "Terintegrasi dengan cakupan seluruh unit-unit fungsional",
+      "Terintegrasi dengan cakupan seluruh unit-unit fungsional dan mitra bisnis strategis",
+      "Tumbuh berkembang (berevolusi) sebagai satu-kesatuan dengan mitra bisnis"
+    ]
+  },
+  {
+    "Id": 31,
+    "Domain": "D5",
+    "Statement": "Bagaimana bisnis menilai fleksibilitas dari infrastruktur TI dalam menghadapi/mengadopsi perubahan pada bisnis dan TI di organisasi (dalam rangka mengadopsi perubahan pada lingkungan/kebutuhan bisnis dan teknologi yang cenderung bersifat dinamis)?",
+    "Responds": [
+      "Infrastruktur TI hanya sebagai penyedia layanan TI dasar dengan biaya minimal (tidak fleksibel)",
+      "Infrastruktur TI mulai dikembangkan berdasarkan kebutuhan dari strategi bisnis terkini (tingkat fleksibilitas terbatas)",
+      "Pengembangan infrastruktur TI diarahkan oleh kebutuhan dari strategi bisnis terkini",
+      "Infrastruktur TI mulai diposisikan sebagai sumber daya untuk merealisasikan respon yang lebih cepat dalam mengadopsi perubahan di lingkungan bisnis",
+      "Infrastruktur TI sebagai pemicu dan pendorong bagi organisasi untuk dapat merespon dengan cepat perubahan di lingkungan bisnis"
+    ]
+  },
+  {
+    "Id": 32,
+    "Domain": "D5",
+    "Statement": "Sejauh mana tingkat kemampuan untuk mengadopsi/memanfaatkan teknologi baru bagi bisnis di PT. ABC?",
+    "Responds": [
+      "Tidak ada kemampuan atau kesiapan",
+      "Ada kemampuan pengelolaan teknologi baru untuk menghasilkan manfaat bisnis tapi masih terbatas dan minimal",
+      "Ketergantungan hanya pada unit-unit fungsional tertentu",
+      "Kemampuan dan kesiapan mencakup seluruh unit-unit fungsional di institusi",
+      "Kemampuan pengelolaan teknologi baru untuk menghasilkan manfaat bisnis bagi organisasi keseluruhan dan para mitra luas"
+    ]
+  },
+  {
+    "Id": 33,
+    "Domain": "D6",
+    "Statement": "Sejauh mana PT. ABC berupaya mendorong terciptanya lingkungan kerja yang dapat mengutamakan inovasi dan semangat kewirausahaan?",
+    "Responds": [
+      "Tidak ada dorongan/ motivasi",
+      "Didorong secara terbatas pada level unit fungsional",
+      "Didorong kuat pada level unit fungsional",
+      "Didorong kuat pada level unit fungsional dan organisasi",
+      "Didorong kuat pada level unit tertentu, korporasi bersama dengan mitra bisnis (stakeholder)"
+    ]
+  },
+  {
+    "Id": 34,
+    "Domain": "D6",
+    "Statement": "Siapa yang paling berperan dalam membuat/memutuskan kebijakan TI di PT. ABC?",
+    "Responds": [
+      "Top management pihak bisnis atau manajemen TI pada level korporat",
+      "Top management pihak bisnis atau manajemen TI pada level korporat dengan masukan dari unit-unit terkait",
+      "Top management pihak bisnis dan unit terkait, dengan masukan dari pengelola TI",
+      "Manajemen pihak bisnis atau TI dengan masukan dari seluruh unit di organisasi",
+      "Manajemen pihak bisnis atau menejemen TI, dengan masukan dari seluruh unit di organisasi dan mitra bisnis terkait"
+    ]
+  },
+  {
+    "Id": 35,
+    "Domain": "D6",
+    "Statement": "Bagaimanakah gaya manajemen yang umumnya diterapkan dalam organisasi PT.ABC saat ini?",
+    "Responds": [
+      "Menggunakan gaya manajemen perintah dan control (command and control)",
+      "Menggunakan gaya manajemen berbasis kesepakatan (consensus based)",
+      "Menggunakan gaya manajemen berbasis hasil (results based)",
+      "Menggunakan gaya manajemen berbasis keuntungan (profit/value based)",
+      "Menggunakan gaya manajemen berbasis hubungan (relationship based)"
+    ]
+  },
+  {
+    "Id": 36,
+    "Domain": "D6",
+    "Statement": "Bagaimana kesiapan organisasi dalam menghadapi perubahan (change readiness)?",
+    "Responds": [
+      "Cenderung menolak perubahan",
+      "Perubahan mulai dirasa perlu dan mulai ada program kerja dalam rangka membangun kesiapan terhadap perubahan",
+      "Program manajemen perubahan ada pada unit fungsional tertentu",
+      "Program manajemen perubahan ada pada tingkat organisasi",
+      "Program manajemen perubahan sudah berlaku di tingkat organisasi dan secara proaktif mengantisipasi perubahan"
+    ]
+  },
+  {
+    "Id": 37,
+    "Domain": "D6",
+    "Statement": "Bagaimana dengan peluang terjadinya mutasi pertukaran posisi/karir lintas unit (career crossover)?",
+    "Responds": [
+      "Jarang atau tidak pernah terjadi",
+      "Mutasi kadang terjadi dalam unit fungsional",
+      "Mutasi sering terjadi untuk posisi manajemen pada unit fungsional",
+      "Mutasi sering terjadi di semua tingkat posisi dalam unit fungsional",
+      "Mutasi terjadi secara teratur untuk semua posisi, dalam unit fungsional dan tingkat organisasi"
+    ]
+  },
+  {
+    "Id": 38,
+    "Domain": "D6",
+    "Statement": "Bagaimana kondisi / budaya lingkungan kerja (hubungan interpersonal) yang berlaku di antara bisnis dengan TI di PT. ABC? (mencakup faktor sosial, budaya, politik, dan kepercayaan)",
+    "Responds": [
+      "Minim interaksi dan rasa saling percaya antara bisnis dan TI",
+      "Mayoritas interaksi antara bisnis dan TI hanya bersifat hubungan transaksional",
+      "Mulai tumbuh kepercayaan antara bisnis dan TI",
+      "Kepercayaan antara bisnis dan TI sudah terbangun",
+      "Kemitraan bersama antara bisnis dan TI, mencakup entitas luar (stakeholder)"
+    ]
+  },
+  {
+    "Id": 39,
+    "Domain": "D6",
+    "Statement": "Bagaimana kemampuan organisasi untuk merekrut dan mempertahankan (retain) personil unit TI lainnya?",
+    "Responds": [
+      "Tidak ada program formal untuk hal ini",
+      "Perekrutan personil TI difokuskan pada kemampuan teknis yang dimilikinya",
+      "Perekrutan personil TI memperhitungkan kemampuan teknis dan bisnis  dan sudah ada program retention untuk pegawai",
+      "Ada program formal untuk perekrutan dan mempertahankan personil TI yang berkualitas di bidang TI",
+      "Program formal untuk perekrutan dan mempertahankan personil TI sudah berjalan efektif"
+    ]
+  }
+]
