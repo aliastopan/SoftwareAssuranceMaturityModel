@@ -32,7 +32,10 @@
             class="form-control mb-2">
             @foreach (var role in _newUser.UserRoles)
             {
-                <option value="@role.Value">@role.Key</option>
+                if(role.Key != "Developer")
+                {
+                    <option value="@role.Value">@role.Key</option>
+                }
             }
         </InputSelect>
 
