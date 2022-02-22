@@ -83,12 +83,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             _env = env;
 
             string wwwroot = $"{env.WebRootPath}\\.datastorage\\survey.json";
-            // string rootsource = Marshal.GetDataStorage("survey.json", ".");
-            // System.Console.WriteLine($"ROOT SOURCE: {wwwroot}");
 
-
-            string source = Marshal.GetDataStorage("survey.json", @"..\..\..\");
-            using (StreamReader reader = new StreamReader(source))
+            using (StreamReader reader = new StreamReader(wwwroot))
             {
                 string json = reader.ReadToEnd();
                 var result = JsonSerializer.Deserialize<List<Questionnaire>>(json);
