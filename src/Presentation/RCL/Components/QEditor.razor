@@ -14,4 +14,21 @@
     }
 </div>
 
-<button class="btn btn-danger">Save</button>
+<button class="btn btn-sm btn-dark" @onclick="@Prev">Prev</button>
+<button class="btn btn-sm btn-dark" @onclick="@Next">Next</button>
+
+<button class="btn btn-danger" @onclick="QManager.Save">Save</button>
+
+@code{
+    private void Next()
+    {
+        QManager.Next();
+        StateHasChanged();
+    }
+
+    private void Prev()
+    {
+        QManager.Prev();
+        StateHasChanged();
+    }
+}
