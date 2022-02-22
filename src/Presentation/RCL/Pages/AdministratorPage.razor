@@ -1,4 +1,5 @@
 @page "/administrator"
+@using Microsoft.AspNetCore.Components.Authorization
 
 <h3>Tabel Survey</h3>
 
@@ -35,7 +36,11 @@
 					var direct = $"/recap/{id}";
 					System.Console.WriteLine($"URL: {direct}");
           			<a href="@direct" class="btn btn-sm btn-info">Lihat Hasil</a>
-          			<button @onclick="(() => DeleteSession(id))" class="btn btn-sm btn-danger" >Hapus</button>
+					<AuthorizeView Roles="Developer, Administrator">
+        				<Authorized>
+          					<button @onclick="(() => DeleteSession(id))" class="btn btn-sm btn-danger" >Hapus</button>
+        				</Authorized>
+    				</AuthorizeView>
 				}
       		</td>
     	</tr>
