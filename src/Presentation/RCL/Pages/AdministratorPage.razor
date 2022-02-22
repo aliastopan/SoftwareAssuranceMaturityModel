@@ -49,7 +49,8 @@
 					<AuthorizeView Roles="Developer, Administrator">
         				<Authorized>
           					<button @onclick="(() => DeleteSession(id))" class="btn btn-sm btn-success" >Hapus</button>
-        				</Authorized>
+          					<button @onclick="(() => CloseSession(id))" class="btn btn-sm btn-success" >Close Session</button>
+						</Authorized>
     				</AuthorizeView>
 				}
       		</td>

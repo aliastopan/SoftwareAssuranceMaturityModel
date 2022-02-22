@@ -15,5 +15,13 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
             StateHasChanged();
             NavigationManager.NavigateTo("/administrator", forceLoad: true);
         }
+
+        private void CloseSession(int sessionId)
+        {
+            SessionManager.CloseSession(sessionId);
+            StateHasChanged();
+            NavigationManager.NavigateTo("/administrator", forceLoad: true);
+        }
+
     }
 }
