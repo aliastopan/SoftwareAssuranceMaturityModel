@@ -75,11 +75,13 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
 
         private IApplicationDbContext _applicationDbContext;
+        private ICurrentUserService _currentUser;
         private IHostingEnvironment _env;
 
-        public SurveyManager(IApplicationDbContext  applicationDbContext, IHostingEnvironment env)
+        public SurveyManager(IApplicationDbContext  applicationDbContext, ICurrentUserService currentUser, IHostingEnvironment env)
         {
             _applicationDbContext = applicationDbContext;
+            _currentUser = currentUser;
             _env = env;
 
             string wwwroot = $"{env.WebRootPath}\\.datastorage\\survey.json";
@@ -130,7 +132,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
 
             Batch batch = new Batch{
                 Session = session.Value,
-                Responds = this.Responds
+                Responds = this.Responds,
+                UserId = _currentUser.UserId
             };
 
             await _applicationDbContext.Batches.AddAsync(batch);

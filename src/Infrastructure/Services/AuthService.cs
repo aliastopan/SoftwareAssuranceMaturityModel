@@ -10,13 +10,15 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Services
 {
     public class AuthService : AuthenticationStateProvider, IAuthService
     {
-        public AuthService(IUserDbContext userDbContext, BrowserStorageService storageService)
+        public AuthService(IUserDbContext userDbContext, ICurrentUserService currentUser , BrowserStorageService storageService)
         {
             _userDbContext = userDbContext;
+            _currentUser = currentUser;
             _storageService = storageService;
         }
 
         private readonly IUserDbContext _userDbContext;
+        private readonly ICurrentUserService _currentUser;
         private readonly BrowserStorageService _storageService;
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
@@ -32,6 +34,8 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Services
                     string jsonIdentity = persistentSignIn.Value!;
                     Identity identity = JsonSerializer.Deserialize<Identity>(jsonIdentity)!;
                     Result persistent = Validate(identity.Username, identity.AuthType);
+
+                    _currentUser.SetCurrentUser(identity.Id);
 
                     if(persistent.Success)
                     {
@@ -80,6 +84,7 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure.Services
 
                 AuthenticationState signIn = new AuthenticationState(principal);
 
+                _currentUser.SetCurrentUser(identity.Id);
                 NotifyAuthenticationStateChanged(Task.FromResult(signIn));
                 return Result.Ok();
             }

@@ -51,6 +51,8 @@ namespace SoftwareAssuranceMaturityModel.Infrastructure
             services.AddScoped<AuthenticationStateProvider>(provider => provider
                 .GetRequiredService<AuthService>());
 
+            services.AddSingleton<ICurrentUserService, CurrentUserService>();
+
             return services;
         }
     }
