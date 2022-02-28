@@ -32,9 +32,9 @@ dotnet ef --startup-project .\src\Presentation\Server\ database update "InitIden
 
 ### ApplicationDbContext
 ``` csharp
-dotnet ef --startup-project .\src\Presentation\Server\ migrations add "InitApplication" --project .\src\Infrastructure\ --context ApplicationDbContext --output-dir "Persistence/Migrations/Application"
+dotnet ef --startup-project .\src\Presentation\Server\ migrations add "UpdateApplication" --project .\src\Infrastructure\ --context ApplicationDbContext --output-dir "Persistence/Migrations/Application"
 
-dotnet ef --startup-project .\src\Presentation\Server\ database update "InitApplication" --project .\src\Infrastructure\ --context ApplicationDbContext
+dotnet ef --startup-project .\src\Presentation\Server\ database update "UpdateApplication" --project .\src\Infrastructure\ --context ApplicationDbContext
 ```
 
 
