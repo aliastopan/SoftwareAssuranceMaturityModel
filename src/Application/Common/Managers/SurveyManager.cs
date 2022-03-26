@@ -84,8 +84,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             _currentUser = currentUser;
             _env = env;
 
-            // string wwwroot = $"{env.WebRootPath}\\.datastorage\\survey.json";
-            string wwwroot = $"{env.WebRootPath}\\.datastorage\\survey-3.json";
+            string wwwroot = $"{env.WebRootPath}\\.datastorage\\survey.json";
+            // string wwwroot = $"{env.WebRootPath}\\.datastorage\\survey-3.json";
 
             using (StreamReader reader = new StreamReader(wwwroot))
             {

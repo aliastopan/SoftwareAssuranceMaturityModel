@@ -15,8 +15,8 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
         public QuestionnaireManager(IHostingEnvironment env)
         {
             _env = env;
-            // string wwwroot = $"{_env.WebRootPath}\\.datastorage\\survey.json";
-            string wwwroot = $"{_env.WebRootPath}\\.datastorage\\survey-3.json";
+            string wwwroot = $"{_env.WebRootPath}\\.datastorage\\survey.json";
+            // string wwwroot = $"{_env.WebRootPath}\\.datastorage\\survey-3.json";
             using (StreamReader reader = new StreamReader(wwwroot))
             {
                 string json = reader.ReadToEnd();
