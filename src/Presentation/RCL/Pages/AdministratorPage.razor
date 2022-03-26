@@ -34,17 +34,17 @@
           				<button @onclick="(() => ToggleExtend())" class="btn btn-sm btn-warning" >Extend Session</button>
 						@if(_isExtending)
 						{
-							<div class="d-flex flex-column">
-								<span>EXTENDING</span>
+							var id = SessionManager.SessionRecords[i].Id;
 
-								<select class="form-control" @bind="@_additionalDaysSelect" style="width:150px">
+							<div class="d-flex flex-row">
+								<select class="form-control form-select-sm mb-3" @bind="@_additionalDaysSelect">
 										@foreach (var option in _additionalDaysList)
 										{
-											<option value=@option>@option</option>
+											<option value=@option>@option Hari</option>
 										}
 								</select>
 
-								<button class="btn btn-sm btn-primary">Submit</button>
+								<button @onclick="(() => ExtendSession(id, _additionalDaysSelect))"  class="btn btn-sm btn-primary">Submit</button>
 							</div>
 						}
 					</div>
