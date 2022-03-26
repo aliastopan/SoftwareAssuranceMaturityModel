@@ -137,6 +137,11 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 UserId = _currentUser.UserId
             };
 
+            for (int i = 0; i < batch.Responds.Count; i++)
+            {
+                batch.Responds[i].QNumber = i+1;
+            }
+
             await _applicationDbContext.Batches.AddAsync(batch);
             _applicationDbContext.SaveChanges();
         }
