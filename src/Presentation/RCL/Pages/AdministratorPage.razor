@@ -29,6 +29,17 @@
 				@if(SessionManager.IsSessionOnGoing(i))
 				{
           			<button class="btn btn-sm btn-light" disabled>Lihat Hasil</button>
+
+					<div>
+          				<button @onclick="(() => ToggleExtend())" class="btn btn-sm btn-warning" >Extend Session</button>
+						@if(_isExtending)
+						{
+							<div class="d-flex flex-column">
+								<span>EXTENDING</span>
+								<button class="btn btn-sm btn-primary">Submit</button>
+							</div>
+						}
+					</div>
 				}
 				else
 				{
@@ -62,3 +73,14 @@
 <br><br>
 
 <SessionForm />
+
+
+@code{
+	private bool _isExtending;
+
+
+	private void ToggleExtend()
+	{
+		_isExtending = !_isExtending;
+	}
+}
