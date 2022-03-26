@@ -19,6 +19,7 @@
             <span class="auth">
                 <AuthorizeView>
                     <Authorized>
+                        <span class="mx-1">Hello, @context.User!.Identity!.Name</span>
                         <a href="/" @onclick="@SignOutAsync">Sign Out</a>
                     </Authorized>
                     <NotAuthorized>
