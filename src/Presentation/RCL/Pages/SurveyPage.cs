@@ -37,7 +37,7 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
         protected async Task SubmitAsync()
         {
             await SurveyManager.Submit();
-            NavManager.NavigateTo("/developer");
+            NavManager.NavigateTo("/respond-submitted");
         }
 
         protected void OnSelectedOption()
