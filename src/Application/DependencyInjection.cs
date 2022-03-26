@@ -22,6 +22,7 @@ namespace SoftwareAssuranceMaturityModel.Application
             services.AddScoped<RecapManager>();
             services.AddTransient<SurveyManager>();
             services.AddTransient<QuestionnaireManager>();
+            services.AddTransient<AccountManager>();
 
             return services;
         }

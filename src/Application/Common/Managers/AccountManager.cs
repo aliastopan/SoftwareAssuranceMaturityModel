@@ -48,6 +48,9 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
                 }
                 _userDbContext.Users.AddRange(users);
                 _userDbContext.SaveChanges();
+
+                Console.WriteLine($"BULK ADD DONE.");
+
             }
         }
     }
