@@ -111,6 +111,19 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             _applicationDbContext.SaveChanges();
         }
 
+        public void ExtendSession(int sessionId, int additionalDays)
+        {
+            var session = _applicationDbContext.Sessions
+                .FirstOrDefault(x => x.Id == sessionId);
+
+            if(session is null)
+                return;
+
+            session.EndDate.AddDays(additionalDays);
+            _applicationDbContext.Sessions.Update(session);
+            _applicationDbContext.SaveChanges();
+        }
+
 
     }
 }

@@ -23,5 +23,12 @@ namespace SoftwareAssuranceMaturityModel.Presentation.RCL.Pages
             NavigationManager.NavigateTo("/administrator", forceLoad: true);
         }
 
+        private void ExtendSession(int sessionId, int additionalDays)
+        {
+            SessionManager.ExtendSession(sessionId, additionalDays);
+            StateHasChanged();
+            NavigationManager.NavigateTo("/administrator", forceLoad: true);
+        }
+
     }
 }
