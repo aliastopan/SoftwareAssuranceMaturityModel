@@ -119,7 +119,11 @@ namespace SoftwareAssuranceMaturityModel.Application.Common.Managers
             if(session is null)
                 return;
 
-            session.EndDate.AddDays(additionalDays);
+            Console.WriteLine($"Additional Day(s): {additionalDays}");
+
+            session.EndDate = session.EndDate.AddDays(additionalDays);
+            session.Flag = SessionFlag.OnGoing;
+
             _applicationDbContext.Sessions.Update(session);
             _applicationDbContext.SaveChanges();
         }
